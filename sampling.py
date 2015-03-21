@@ -6,7 +6,10 @@ import sys
 import cPickle as pickle
 from matplotlib import pyplot as plt
 import logging
-import parser
+from datareader import CorpusReader
+from parser import Parser
+
+
 
 WEIGHT_FILE = "weights"
 
@@ -23,83 +26,84 @@ def parse_dataset(dataset, grammar):
 
 
 #TODO: Check if we are gonna use this global dicts
-treeFrequency = dict()
-treeDerivation = dict()
-rootFrequency = dict()
-probabilities = dict()
-parses = list()
-
-
-newTreeFrequency = dict()
-newRootFrequency = dict()
-newProbabilities = dict()
+# treeFrequency = dict()
+# treeDerivation = dict()
+# rootFrequency = dict()
+# probabilities = dict()
+# parses = list()
+#
+#
+# newTreeFrequency = dict()
+# newRootFrequency = dict()
+# newProbabilities = dict()
 
 def updateDictionary(parse, update=True,statistcs=True):
-    global treeFrequency
-    global rootFrequency
-    global probabilities
-    global newTreeFrequency
-    global newRootFrequency
-    global newProbabilities
-    
+#     global treeFrequency
+#     global rootFrequency
+#     global probabilities
+#     global newTreeFrequency
+#     global newRootFrequency
+#     global newProbabilities
+
     # remove head and tail parenthesis
-    parse = parse[1:len(parse)-1]
+#     parse = parse[1:len(parse)-1]
     parse = parse.strip()
-    
-    if update:
-        # get root
-        root = parse.split()[0]
-        
-        # get subtree
-        tree = ' '.join(parse.split()[1:])
-        
-        if statistcs: # update general stats
-            # update frequency of this tree
-            treeFrequency.setdefault(parse,0)
-            treeFrequency[parse] += 1
-            
-            # update the root frequency
-            rootFrequency.setdefault(root,0)
-            rootFrequency[root] += 1
-            
-            # update tree derivation
-            treeDerivation.setdefault(root,set())
-            treeDerivation[root].add(tree)
-        else: # update new stats
-            
-            newTreeFrequency.setdefault(parse,0)
-            newTreeFrequency[parse] += 1
-            
-            newRootFrequency.setdefault(root,0)
-            newRootFrequency[root] += 1
-        
+
+#     if update:
+#         # get root
+#         root = parse.split()[0]
+#
+#         # get subtree
+#         tree = ' '.join(parse.split()[1:])
+#
+#         if statistcs: # update general stats
+#             # update frequency of this tree
+#             treeFrequency.setdefault(parse,0)
+#             treeFrequency[parse] += 1
+#
+#             # update the root frequency
+#             rootFrequency.setdefault(root,0)
+#             rootFrequency[root] += 1
+#
+#             # update tree derivation
+#             treeDerivation.setdefault(root,set())
+#             treeDerivation[root].add(tree)
+#         else: # update new stats
+#
+#             newTreeFrequency.setdefault(parse,0)
+#             newTreeFrequency[parse] += 1
+#
+#             newRootFrequency.setdefault(root,0)
+#             newRootFrequency[root] += 1
+
     derivations = set()
     derivations.add(parse)
-        
+
     return derivations
 
 
-def computeLikelihoodOfParse(parse, probabilities):
+def computeLikelihoodOfParse(parse):
     eTrees = decomposeTSG(parse, update=False, statistcs=False)
     probability = 1
     for tree in eTrees:
         #TODO: Call the cdec python wrapper to compute the inside probability of the tree
         continue
-    
+
     return probability
 
 
-def get_dataset_likelihood(rawBlock, newBlock):
-    newLikelihood = 0
-    oldLikelihood = 0
+def get_dataset_likelihood(parses):
+#     newLikelihood = 0
+#     oldLikelihood = 0
+    likelihood = 0
     for parse in parses:
-        newParse = parse.replace(rawBlock,newBlock)
-#             newLikelihood *= computeLikelihoodOfParse(newParse, newProbabilities)
-#             oldLikelihood *= computeLikelihoodOfParse(parse, probabilities)
-        newLikelihood += computeLikelihoodOfParse(newParse, newProbabilities)
-        oldLikelihood += computeLikelihoodOfParse(parse, probabilities)
-    
-    return oldLikelihood, newLikelihood
+#         newParse = parse.replace(rawBlock,newBlock)
+#         newLikelihood *= computeLikelihoodOfParse(newParse, newProbabilities)
+#         oldLikelihood *= computeLikelihoodOfParse(parse, probabilities)
+#         newLikelihood += computeLikelihoodOfParse(newParse)
+        likelihood += computeLikelihoodOfParse(parse)
+
+    return likelihood
 
 
 
@@ -199,8 +203,8 @@ def getNonTerminals():
     '''
     Returns a list of non terminal symbols. Does not include the root symbol.
     '''
-    
-    return ['S1','S2','NZ','Z'] #TODO: Fix this. Get the list dynamically.
+
+    return ['S1', 'S2', 'D', 'NZ'] #TODO: Fix this. Get the list dynamically.
 
 
 def placeSubstitutionPoints(treebank):
@@ -209,11 +213,11 @@ def placeSubstitutionPoints(treebank):
     :param treebank: Treebank corpus
     :return: Marked treebank corpus
     '''
-    
+
     convertedTreebank = []
-    
+
     threshold = 0.3
-    
+
     for tree in treebank:
         convertedTree = []
 
@@ -227,17 +231,18 @@ def placeSubstitutionPoints(treebank):
             p = np.random.rand()
 
             if p < threshold:
-                match = re.search(r"'.*(?:"+'|'.join(getNonTerminals()) +")'", tag) # match any non terminal symbol but the root
+                match = re.search(r'.*(?:'+'|'.join(getNonTerminals()) +')', tag) # match any non terminal symbol but the root
                 if match:
                     newTag = match.group()+'*'
                 else:
                     newTag = tag
             else:
                 newTag = tag
-                convertedTree.append(newTag)
-        
-        
-        convertedTreebank.append(convertedTree)
+
+            convertedTree.append(newTag)
+
+
+        convertedTreebank.append(' '.join(convertedTree))
 
     return convertedTreebank
 
@@ -283,7 +288,7 @@ def decomposeTSG(tree, update=False, statistcs=False):
     :param tree: marked tree with substitution points
     :return:
     '''
-    
+
     if tree.count('*')==0:
         derivations = updateDictionary(tree,update=update,statistcs=statistcs)
         return derivations
@@ -314,7 +319,7 @@ def make_random_candidate_change(treebank):
 	:param dataset:
 	:return:
 	'''
-    
+
     pChange = random.random() # add or delete star?
 
     option = False
@@ -337,9 +342,10 @@ def make_random_candidate_change(treebank):
 
             prevent += 1
 
-        if not option: # i got stuck in the while loop
-            logging.info('Couldnt find a replacement slot')
-            continue
+        #TODO: Check this. Before, I would move to the next iteration
+#         if not option: # i got stuck in the while loop
+#             logging.info('Couldnt find a replacement slot')
+#             continue
 
         symbol = slots[random.randint(0,len(slots)-1)] # choose random symbol to insert star
         countSymbol = parse.count(symbol+' ') # take care not to count symbol*
@@ -370,9 +376,10 @@ def make_random_candidate_change(treebank):
 
             prevent += 1
 
-        if not option: # i got stuck in the while loop
-            logging.info('Couldnt find a replacement slot')
-            continue
+        #TODO: Check this. Before, I would move to the next iteration
+#         if not option: # i got stuck in the while loop
+#             logging.info('Couldnt find a replacement slot')
+#             continue
 
         # remove a star
         countStars = parse.count('*')
@@ -388,26 +395,26 @@ def make_random_candidate_change(treebank):
 
         # remove first star from block
         newBlock = rawBlock.replace('*','',1) # theres always gonna be, at least, one.
-    
+
     newParses = list()
     for tree in treebank:
         newParse = tree.replace(rawBlock,newBlock)
         newParses.append(newParse)
-        decomposeTSG(newParse, update=True,statistcs=False) # stats==True: update general
-    
-    return newParses, rawBlock, newBlock
+        elementaryTrees = decomposeTSG(newParse, update=True,statistcs=False) # stats==True: update general
+
+    return newParses, elementaryTrees, rawBlock, newBlock
 
 
 def metropolis_hastings(old_dataset, n=1000, ap=None, outfile=sys.stdout):
-#     old_likelihood = get_dataset_likelihood(old_dataset)
+    old_likelihood = get_dataset_likelihood(old_dataset)
 
-    #TODO: move this write. We dont have the old_likelihood at this point.
     outfile.write("\t".join(["0", "A", str(old_likelihood), str(old_likelihood), str(old_tsg.get_grammar_size()), str(old_tsg.total_trees)]) + "\n")
-    
+
     for i in range(n):
 #         new_dataset = make_random_candidate_change(old_dataset) # Lau: new method should return dataset with candidate changes
-        new_dataset, rawBlock, newBlock = make_random_candidate_change(old_dataset)
-        old_likelihood, new_likelihood = get_dataset_likelihood(rawBlock, newBlock) # lqrz: by passing the old and new block we can forloop only once to ge the likelihood.
+        new_dataset, new_tsg, _, _ = make_random_candidate_change(old_dataset)
+        get_dataset_likelihood(new_dataset)
+        old_likelihood, new_likelihood = get_dataset_likelihood(new_dataset) # lqrz: by passing the old and new block we can forloop only once to ge the likelihood.
         #if new_dataset == old_dataset:
         #    print "EQUAL!!"
 
@@ -444,6 +451,21 @@ def run_experiment(outfile_name, subset_size=10000, ap=None, iterations=10000):
 
     #num_dist, _ = get_empirical_data("data/wsj01-21-without-tags-traces-punctuation-m40.txt")
 
+    reader = CorpusReader()
+
+#     data = reader.read_data('numbers', None)
+    reader.read_data('wsj01-21-without-tags-traces-punctuation-m40.txt', 'CD')
+
+    grammar_f = open("example.cfg", "r")
+    grammar = grammar_f.read()
+    grammar_f.close()
+
+    parser = Parser(grammar, "example.weights")
+
+    parses = []
+    for s in data:
+        parses.append(parser.get_best_parse(s))
+
     x, y = zip(*[(x,num_dist[x]) for x in num_dist.keys() if x <= 100])
 
     plt.figure()
@@ -458,13 +480,17 @@ def run_experiment(outfile_name, subset_size=10000, ap=None, iterations=10000):
     plt.hist(numbers, bins=10)
     plt.savefig(outfile_name + "init_b" + ".png")
 
-    subset = get_random_subset(num_dist, size=10000)
+
+    # Limit to range [0,4000)
+    # With really small probability, perform uniform sampling
+    # The return variable is a numpy 1D array
+    subset = reader.sample(limit=4000, size=20000, uniformprob=0.001)
 
     # Assign a parse and randomly mark substitution sites
 
     # dataset = [random_mark_subst_site(det_parse_num(str(i))) for i in subset] # comment - lqrz
 
-	dataset = place_substitution_points(subset) # lqrz
+    dataset = placeSubstitutionPoints(subset) # lqrz
 
     outfile = open(outfile_name + "_results.txt", "w")
 
@@ -510,4 +536,28 @@ def run_experiment(outfile_name, subset_size=10000, ap=None, iterations=10000):
 #run_experiment("results/10000_2000_001", subset_size=10000, ap=0.01, iterations=2000)
 
 
+#---------------- For debugging purposes
 
+reader = CorpusReader()
+
+reader.read_data('numbers', None)
+data = reader.count_total
+
+
+grammar_f = open("initial_grammar", "r")
+grammar = grammar_f.read()
+grammar_f.close()
+
+parser = Parser(grammar, "example.weights")
+
+# parses = []
+# for s in data:
+#     s = ' '.join(str(s))
+#     if len(s)>10:
+#         continue
+#     parses.append(parser.get_best_parse(s))
+
+parses = ['S (D 1)','S (S1 (NZ 8)) (S2 (D 0) (S2 (D 0) (S2 (D 0))))', 'S (S1 (NZ 3)) (S2 (D 5))']
+
+dataset = placeSubstitutionPoints(parses)
+final_dataset = metropolis_hastings(dataset, n=10)

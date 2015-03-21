@@ -38,10 +38,13 @@ class CorpusReader:
         self.lookup['million'] = 10 ** 6
         self.lookup['billion'] = 10 ** 9
         self.lookup['trillion'] = 10 ** 12
+        self.reset()
+
+
+    def reset(self):
         self.count_num = dict()
         self.count_alpha = dict()
         self.count_total = dict()
-        pass
 
 
     def read_data(self, filename, tag='CD'):
@@ -51,6 +54,8 @@ class CorpusReader:
         :param tag: Look for numbers inside this tag, if None is supplied,
                     numbers are assumed to be one per line
         '''
+        self.reset()
+
         with open(filename) as fileobject:
             for line in fileobject:
                 number_groups = []
