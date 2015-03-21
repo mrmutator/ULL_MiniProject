@@ -37,11 +37,11 @@ class Parser(object):
 
     def get_best_parse(self, string):
         forest = self.decoder.translate(string, grammar=self.grammar)
-        return forest.viterbi_trees()[0]
+        return forest.viterbi_trees()[0][1:-1]
 
     def get_random_parse(self, string):
         forest = self.decoder.translate(string, grammar=self.grammar)
-        return list(forest.sample_trees(1))[0]
+        return list(forest.sample_trees(1))[0][1:-1]
 
 
 
