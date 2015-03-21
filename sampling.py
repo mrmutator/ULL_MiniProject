@@ -112,8 +112,7 @@ def get_dataset_likelihood(raw_dataset, root_counts, tree_counts):
     likelihood = 0
 
     for s in raw_dataset:
-        inside = par.get_inside_string(" ".join(str(s)))
-        likelihood += inside
+        likelihood += parser.get_inside_string(" ".join(s))
 
     # delete tmp_files
     os.remove(TMP_DATA_DIR + "tmp_grammar.cfg")
@@ -494,7 +493,7 @@ parser = Parser(INITIAL_INI, CDEC_PATH)
 parses = []
 raw_dataset = []
 for s in data.keys()[:10]:
-    raw_dataset.append(s)
+    raw_dataset.append(str(s))
     s = ' '.join(str(s))
     parses.append(parser.get_best_parse(s))
 
