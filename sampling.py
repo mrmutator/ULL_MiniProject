@@ -25,7 +25,8 @@ def parse_dataset(dataset, ini_file):
     parsed = []
     for string in dataset:
         parse = p.get_best_parse(string)
-        parsed.append(p)
+#         parsed.append(p)
+        parsed.append(parse)
 
     return parsed
 
