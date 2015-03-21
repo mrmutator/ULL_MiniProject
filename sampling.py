@@ -27,65 +27,12 @@ def parse_dataset(dataset, ini_file):
     return parsed
 
 
-#TODO: Check if we are gonna use this global dicts
-# treeFrequency = dict()
-# treeDerivation = dict()
-# rootFrequency = dict()
-# probabilities = dict()
-# parses = list()
-#
-#
-# newTreeFrequency = dict()
-# newRootFrequency = dict()
-# newProbabilities = dict()
-
-def updateDictionary(parse, update=True,statistcs=True):
-#     global treeFrequency
-#     global rootFrequency
-#     global probabilities
-#     global newTreeFrequency
-#     global newRootFrequency
-#     global newProbabilities
-
-    # remove head and tail parenthesis
-#     parse = parse[1:len(parse)-1]
-    parse = parse.strip()
-
-#     if update:
-#         # get root
-#         root = parse.split()[0]
-#
-#         # get subtree
-#         tree = ' '.join(parse.split()[1:])
-#
-#         if statistcs: # update general stats
-#             # update frequency of this tree
-#             treeFrequency.setdefault(parse,0)
-#             treeFrequency[parse] += 1
-#
-#             # update the root frequency
-#             rootFrequency.setdefault(root,0)
-#             rootFrequency[root] += 1
-#
-#             # update tree derivation
-#             treeDerivation.setdefault(root,set())
-#             treeDerivation[root].add(tree)
-#         else: # update new stats
-#
-#             newTreeFrequency.setdefault(parse,0)
-#             newTreeFrequency[parse] += 1
-#
-#             newRootFrequency.setdefault(root,0)
-#             newRootFrequency[root] += 1
-
-    derivations = set()
-    derivations.add(parse)
-
-    return derivations
-
-
 def computeLikelihoodOfParse(parse):
-    eTrees = decomposeTSG(parse, update=False, statistcs=False)
+    '''
+    Computes the likelihood of a given tree
+    '''
+    
+    eTrees = decomposeTSG(parse)
     probability = 1
     for tree in eTrees:
         #TODO: Call the cdec python wrapper to compute the inside probability of the tree
@@ -95,111 +42,16 @@ def computeLikelihoodOfParse(parse):
 
 
 def get_dataset_likelihood(parses):
-#     newLikelihood = 0
-#     oldLikelihood = 0
+    '''
+    Computes the likelihood of the whole dataset
+    '''
+    
     likelihood = 0
     for parse in parses:
-#         newParse = parse.replace(rawBlock,newBlock)
-#         newLikelihood *= computeLikelihoodOfParse(newParse, newProbabilities)
-#         oldLikelihood *= computeLikelihoodOfParse(parse, probabilities)
-#         newLikelihood += computeLikelihoodOfParse(newParse)
         likelihood += computeLikelihoodOfParse(parse)
 
     return likelihood
 
-
-
-# def make_random_candidate_change(dataset):
-#
-#     # TO-DO: change this so it works for all grammars
-#     # Lautaro
-#
-#     new_dataset = []
-#     new_tsg = TSGData()
-#
-#
-#     # get random derivation
-#     temp = [d for d in dataset]
-#     random.shuffle(temp)
-#     for t in temp:
-#         num_sites = sum([1 for ch in t if ch == "P"])
-#
-#         if num_sites > 0:
-#             break
-#     else:
-#         # adding not possible:
-#         raise Exception("Adding not possible")
-#
-#     j = random.randint(0, num_sites-1)
-#
-#     old_string = t
-#
-#     new_string = ""
-#     s_count = -1
-#     for ch in old_string:
-#         new_string += ch
-#         if ch in ["P"]:
-#             s_count += 1
-#             if s_count== j:
-#                 new_string += "*"
-#
-#     new_string = new_string.replace("**", "")
-#
-#     new_trees = get_elementary_trees(new_string)
-#     old_trees = get_elementary_trees(old_string)
-#
-#     new_trees_temp = list(new_trees)
-#     removed_trees = []
-#     for t in old_trees:
-#         try:
-#             i = new_trees_temp.index(t)
-#             new_trees_temp.pop(i)
-#         except ValueError:
-#             removed_trees.append(t)
-#
-#     old_trees_temp = list(old_trees)
-#     added_trees = []
-#     for t in new_trees:
-#         try:
-#             i = old_trees_temp.index(t)
-#             old_trees_temp.pop(i)
-#         except ValueError:
-#             added_trees.append(t)
-#
-#
-#     change_type = None
-#
-#     if len(removed_trees) == 2: # removal
-#         old_pattern = removed_trees[0].rstrip(")")[:-1] + removed_trees[1][:2] + "*" + removed_trees[1][2:] + ")"
-#         new_pattern = removed_trees[0].rstrip(")")[:-1] + removed_trees[1] + ")"
-#         old_pattern = re.sub("P\\)+", "(P", old_pattern)
-#         new_pattern = re.sub("P\\)+", "(P", new_pattern)
-#         change_type= "removal"
-#     elif len(removed_trees) == 1: # add
-#         old_pattern = removed_trees[0]
-#         new_pattern = added_trees[0].rstrip(")")[:-1] + added_trees[1][:2] + "*" + added_trees[1][2:] + ")"
-#         old_pattern = re.sub("P\\)+", "(P", old_pattern)
-#         new_pattern = re.sub("P\\)+", "(P", new_pattern)
-#         change_type = "add"
-#     else:
-#         raise Exception("Should not happen.")
-#
-#     changes = 0
-#
-#     for d in dataset:
-#         new_d = d.replace(old_pattern, new_pattern)
-#         if new_d == d:
-#             new_d = d.replace(re.sub("^\\(P", "(P*", old_pattern).replace("**", ""), new_pattern)
-#
-#         if new_d != d:
-#             changes += 1
-#         new_tsg.add_el_trees(get_elementary_trees(new_d))
-#         new_dataset.append(new_d)
-#
-#     if changes == 0:
-#         print change_type
-#
-#     return new_tsg, new_dataset
 
 def getNonTerminals():
     '''
@@ -284,7 +136,7 @@ def getBlock(firstStarIndex, tree):
     return rawBlock, substitutionSymbol
 
 
-def decomposeTSG(tree, update=False, statistcs=False):
+def decomposeTSG(tree):
     '''
     Decomposes a tree which has substitution points into elementary trees.
     :param tree: marked tree with substitution points
@@ -292,7 +144,11 @@ def decomposeTSG(tree, update=False, statistcs=False):
     '''
 
     if tree.count('*')==0:
-        derivations = updateDictionary(tree,update=update,statistcs=statistcs)
+#         derivations = updateDictionary(tree,update=update,statistcs=statistcs)
+        parse = tree.strip()
+        derivations = set()
+        derivations.add(parse)
+        
         return derivations
 
     # Get first star
@@ -308,8 +164,8 @@ def decomposeTSG(tree, update=False, statistcs=False):
 
     result = set()
     # recursive call to keep decomposing
-    result = result.union(decomposeTSG(newL,update=update,statistcs=statistcs))
-    result = result.union(decomposeTSG(block,update=update,statistcs=statistcs))
+    result = result.union(decomposeTSG(newL))
+    result = result.union(decomposeTSG(block))
 
     return result
 
@@ -402,12 +258,16 @@ def make_random_candidate_change(treebank):
     for tree in treebank:
         newParse = tree.replace(rawBlock,newBlock)
         newParses.append(newParse)
-        elementaryTrees = decomposeTSG(newParse, update=True,statistcs=False) # stats==True: update general
+        elementaryTrees = decomposeTSG(newParse) # stats==True: update general
 
     return newParses, elementaryTrees, rawBlock, newBlock
 
 
 def metropolis_hastings(old_dataset, n=1000, ap=None, outfile=sys.stdout):
+    '''
+    Runs Metropolis Hastings algorithm
+    '''
+    
     old_likelihood = get_dataset_likelihood(old_dataset)
 
     outfile.write("\t".join(["0", "A", str(old_likelihood), str(old_likelihood), str(old_tsg.get_grammar_size()), str(old_tsg.total_trees)]) + "\n")
