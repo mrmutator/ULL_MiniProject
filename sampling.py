@@ -8,17 +8,22 @@ from matplotlib import pyplot as plt
 import logging
 from datareader import CorpusReader
 from parser import Parser
+import constants
 
-CDEC_PATH = "/home/rwechsler/PycharmProjects/cdec/decoder/cdec"
+#----------- Begin Params ---------#
+CDEC_PATH = constants.CDEC_PATH
+WEIGHT_FILE = constants.WEIGHT_FILE
+INITIAL_INI = constants.INITIAL_INI
+#----------- End Params -----------#
 
-WEIGHT_FILE = "weights"
 
-INITIAL_INI = "initial.ini"
-
+#----------- Begin global vars ---------#
 treeFrequency = dict()
 rootFrequency = dict()
 newTreeFrequency = dict()
 newRootFrequency = dict()
+#----------- End global vars -----------#
+
 
 def updateDictionary(parse, update=True,statistcs=True):
     '''
