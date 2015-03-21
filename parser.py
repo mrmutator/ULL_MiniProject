@@ -6,7 +6,7 @@ import re
 
 
 def create_cdec_grammar(root_counts, tree_counts):
-    terminals = [0,1,2,3,4,5,6,7,8,9]
+    terminals = ['0','1','2','3','4','5','6','7','8','9']
     grammar = ""
     for tree in tree_counts:
         root = tree.split()[0]
@@ -15,10 +15,10 @@ def create_cdec_grammar(root_counts, tree_counts):
 
         leaves = re.findall(r" (\w+?)\)", tree)
         i = 0
-        for l in leaves:
+        for j, l in enumerate(leaves):
             if l not in terminals:
                 i += 1
-                l = "[" + l + "," + str(i) + "]"
+                leaves[j] = "[" + l + "," + str(i) + "]"
 
         RH = " ".join(leaves)
 
@@ -46,10 +46,10 @@ class Parser(object):
     def get_best_parse(self, string):
         parsing = subprocess.Popen([self.path_cdec, "-c", self.config_file, "-z" ], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         result = parsing.communicate(input=string + "\n")[0]
-        return re.search(r"tree: (\(.+\))\n", result).group(1)
+        return re.search(r"tree: (\(.+\))\n", result).group(1)[1:-1]
 
     def get_random_parse(self, string):
-        # TO-DO: impolement
+        # TO-DO: implement
         return None
 
 
