@@ -327,7 +327,7 @@ def make_random_candidate_change(treebank):
     return newParses
 
 
-def metropolis_hastings(old_dataset, n=1000, ap=None, outfile=sys.stdout):
+def metropolis_hastings(raw_dataset, old_dataset, n=1000, ap=None, outfile=sys.stdout):
     '''
     Runs Metropolis Hastings algorithm
     '''
@@ -342,8 +342,7 @@ def metropolis_hastings(old_dataset, n=1000, ap=None, outfile=sys.stdout):
     for i in range(n):
 
         new_dataset, new_tsg, _, _ = make_random_candidate_change(old_dataset)
-        get_dataset_likelihood(new_dataset)
-        old_likelihood, new_likelihood = get_dataset_likelihood(new_dataset) # lqrz: by passing the old and new block we can forloop only once to ge the likelihood.
+        new_likelihood = get_dataset_likelihood(raw_dataset, rootFrequency, treeFrequency) # lqrz: by passing the old and new block we can forloop only once to ge the likelihood.
         #if new_dataset == old_dataset:
         #    print "EQUAL!!"
 
@@ -487,11 +486,13 @@ data = reader.count_total
 parser = Parser(INITIAL_INI, CDEC_PATH)
 
 parses = []
+raw_dataset = []
 for s in data:
+    raw_dataset.append(s)
     s = ' '.join(str(s))
     parses.append(parser.get_best_parse(s))
 
 #parses = ['S (D 1)','S (S1 (NZ 8)) (S2 (D 0) (S2 (D 0) (S2 (D 0))))', 'S (S1 (NZ 3)) (S2 (D 5))']
 
 dataset = placeSubstitutionPoints(parses)
-final_dataset = metropolis_hastings(dataset, n=10)
+final_dataset = metropolis_hastings(raw_dataset, dataset, n=10)
