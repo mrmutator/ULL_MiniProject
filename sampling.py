@@ -45,14 +45,12 @@ def computeLikelihoodOfParse(parse):
 
 
 def get_dataset_likelihood(parses):
-#     newLikelihood = 0
-#     oldLikelihood = 0
+    '''
+    Computes the likelihood of the whole dataset
+    '''
+    
     likelihood = 0
     for parse in parses:
-#         newParse = parse.replace(rawBlock,newBlock)
-#         newLikelihood *= computeLikelihoodOfParse(newParse, newProbabilities)
-#         oldLikelihood *= computeLikelihoodOfParse(parse, probabilities)
-#         newLikelihood += computeLikelihoodOfParse(newParse)
         likelihood += computeLikelihoodOfParse(parse)
 
     return likelihood
@@ -269,6 +267,10 @@ def make_random_candidate_change(treebank):
 
 
 def metropolis_hastings(old_dataset, n=1000, ap=None, outfile=sys.stdout):
+    '''
+    Runs Metropolis Hastings algorithm
+    '''
+    
     old_likelihood = get_dataset_likelihood(old_dataset)
 
     outfile.write("\t".join(["0", "A", str(old_likelihood), str(old_likelihood), str(old_tsg.get_grammar_size()), str(old_tsg.total_trees)]) + "\n")
