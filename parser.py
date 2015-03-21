@@ -46,7 +46,7 @@ class Parser(object):
     def get_best_parse(self, string):
         parsing = subprocess.Popen([self.path_cdec, "-c", self.config_file, "-z" ], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         result = parsing.communicate(input=string + "\n")[0]
-        return re.search(r"tree: (\(.+\))\n", result).group(1)[1:-1]
+        return re.search(r"tree: (\(.+\))\n", result).group(1)
 
     def get_random_parse(self, string):
         # TO-DO: impolement
