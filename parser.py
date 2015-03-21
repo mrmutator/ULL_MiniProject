@@ -3,6 +3,19 @@ import cdec
 import gzip
 from math import exp
 
+
+
+def create_cdec_grammar(root_counts, tree_counts):
+    grammar = ""
+    for tree in tree_counts:
+        r = tree.split()[0]
+
+
+
+
+
+
+
 class Parser(object):
 
     def __init__(self, grammar, weight_file):
@@ -26,6 +39,10 @@ class Parser(object):
         forest = self.decoder.translate(string, grammar=self.grammar)
         return forest.viterbi_trees()[0]
 
+    def get_random_parse(self, string):
+        forest = self.decoder.translate(string, grammar=self.grammar)
+        return list(forest.sample_trees(1))[0]
+
 
 
 if __name__ == "__main__":
@@ -40,3 +57,5 @@ if __name__ == "__main__":
     print parser.get_inside_string("a")
 
     print parser.get_best_parse("a")
+
+    print parser.get_random_parse("a")
