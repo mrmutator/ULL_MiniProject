@@ -20,10 +20,10 @@ TMP_DATA_DIR = constants.TMP_DATA_DIR
 
 
 #----------- Begin global vars ---------#
-treeFrequency = dict()
-rootFrequency = dict()
-newTreeFrequency = dict()
-newRootFrequency = dict()
+treeFrequency = dict() # Keys: Elementary trees. Values: Frequency of each elementary tree
+rootFrequency = dict() # Keys: Roots of the elementary trees. Values: Frequency of each root
+newTreeFrequency = dict() # Keys: Elementary trees after Metrop-Hast random change. Values: Frequency of each elementary tree
+newRootFrequency = dict() # Keys: Roots of the elementary trees formed after Metrop-Hast random change. Values: Frequency of each elementary tree
 #----------- End global vars -----------#
 
 
@@ -322,9 +322,9 @@ def make_random_candidate_change(treebank):
     for tree in treebank:
         newParse = tree.replace(rawBlock,newBlock)
         newParses.append(newParse)
-        elementaryTrees = decomposeTSG(newParse, update=True,statistcs=False) # stats==True: update general
+        decomposeTSG(newParse, update=True,statistcs=False) # stats==True: update general
 
-    return newParses, elementaryTrees, rawBlock, newBlock
+    return newParses
 
 
 def metropolis_hastings(old_dataset, n=1000, ap=None, outfile=sys.stdout):
@@ -337,9 +337,10 @@ def metropolis_hastings(old_dataset, n=1000, ap=None, outfile=sys.stdout):
     
     old_likelihood = get_dataset_likelihood(old_dataset)
 
-    outfile.write("\t".join(["0", "A", str(old_likelihood), str(old_likelihood), str(len(rootFrequency.keys())), str(np.sum(treeFrequency.values()))]) + "\n")
+    outfile.write("\t".join(["0", "A", str(old_likelihood), str(old_likelihood), str(len(treeFrequency.keys())), str(np.sum(treeFrequency.values()))]) + "\n")
 
     for i in range(n):
+
         new_dataset, new_tsg, _, _ = make_random_candidate_change(old_dataset)
         get_dataset_likelihood(new_dataset)
         old_likelihood, new_likelihood = get_dataset_likelihood(new_dataset) # lqrz: by passing the old and new block we can forloop only once to ge the likelihood.
@@ -350,7 +351,7 @@ def metropolis_hastings(old_dataset, n=1000, ap=None, outfile=sys.stdout):
         #print new_tsg.total_trees
 
         if new_likelihood > old_likelihood:
-            outfile.write("\t".join([str(i+1), "A", str(new_likelihood), str(new_likelihood), str(len(newRootFrequency.keys())), str(np.sum(newTreeFrequency.values()))]) + "\n")
+            outfile.write("\t".join([str(i+1), "A", str(new_likelihood), str(new_likelihood), str(len(newTreeFrequency.keys())), str(np.sum(newTreeFrequency.values()))]) + "\n")
             #print "accepted: ", new_likelihood, old_likelihood
             old_likelihood = new_likelihood
             old_dataset = new_dataset
@@ -363,7 +364,7 @@ def metropolis_hastings(old_dataset, n=1000, ap=None, outfile=sys.stdout):
                 p = ap
             r =np.random.binomial(1, p)
             if r:
-                outfile.write("\t".join([str(i+1), "F", str(new_likelihood), str(new_likelihood), str(len(newRootFrequency.keys())), str(np.sum(newTreeFrequency.values()))]) + "\n")
+                outfile.write("\t".join([str(i+1), "F", str(new_likelihood), str(new_likelihood), str(len(newTreeFrequency.keys())), str(np.sum(newTreeFrequency.values()))]) + "\n")
                 #print "forced: ", new_likelihood, old_likelihood
                 old_likelihood = new_likelihood
                 old_dataset = new_dataset
@@ -371,7 +372,7 @@ def metropolis_hastings(old_dataset, n=1000, ap=None, outfile=sys.stdout):
                 rootFrequency = newRootFrequency
             else:
                 # reject
-                outfile.write("\t".join([str(i+1), "R", str(new_likelihood), str(old_likelihood), str(len(newRootFrequency.keys())), str(np.sum(newTreeFrequency.values()))]) + "\n")
+                outfile.write("\t".join([str(i+1), "R", str(new_likelihood), str(old_likelihood), str(len(newTreeFrequency.keys())), str(np.sum(newTreeFrequency.values()))]) + "\n")
                 #print "rejected ", new_likelihood, old_likelihood
 
         print i, old_likelihood
@@ -379,6 +380,10 @@ def metropolis_hastings(old_dataset, n=1000, ap=None, outfile=sys.stdout):
     return old_dataset
 
 def run_experiment(outfile_name, subset_size=10000, ap=None, iterations=10000):
+    
+    global treeFrequency
+    global rootFrequency
+    
     # take a subset of numerals from the empirical data
 
     #num_dist, _ = get_empirical_data("data/wsj01-21-without-tags-traces-punctuation-m40.txt")
@@ -428,13 +433,15 @@ def run_experiment(outfile_name, subset_size=10000, ap=None, iterations=10000):
 
     final_dataset = metropolis_hastings(dataset, n=iterations, ap=ap, outfile=outfile)
 
-    dmp = [final_tsg, final_dataset]
+#     dmp = [final_tsg, final_dataset]
+    dmp = [treeFrequency, rootFrequency, final_dataset]
 
     pickle.dump(dmp, open(outfile_name+"_grammar.pkl", "wb"))
 
     outfile.close()
 
-    rules = final_tsg.get_rule_dict()
+#     rules = final_tsg.get_rule_dict()
+    rules = treeFrequency.keys() # the keys are gonna have all the elementary trees
 
     cum_rules = transfer_rules(rules)
 
