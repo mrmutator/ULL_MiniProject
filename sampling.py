@@ -16,16 +16,13 @@ WEIGHT_FILE = "weights"
 INITIAL_INI = "initial.ini"
 
 
-
-
-
 def parse_dataset(dataset, ini_file):
 
     p = parser.Parser(ini_file, CDEC_PATH)
     parsed = []
     for string in dataset:
-        parse = p.get_best_parse(string)
-        parsed.append(p)
+        parse = p.get_best_parse(' '.join(string))
+        parsed.append(parse)
 
     return parsed
 
