@@ -111,7 +111,7 @@ def get_dataset_likelihood(raw_dataset, root_counts, tree_counts):
 
     likelihood = 0
 
-    for s in dataset:
+    for s in raw_dataset:
         likelihood += parser.get_inside_string(" ".join(s))
 
     # delete tmp_files
