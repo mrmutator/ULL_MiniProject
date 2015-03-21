@@ -23,7 +23,7 @@ class Parser(object):
 
     def get_best_parse(self, string):
         forest = self.decoder.translate(string, grammar=self.grammar)
-        return forest.viterbi()
+        return forest.viterbi_trees()[0]
 
 
 
@@ -37,3 +37,5 @@ if __name__ == "__main__":
     parser.update_grammar(grammar)
 
     print parser.get_inside_string("a")
+
+    print parser.get_best_parse("a")
