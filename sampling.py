@@ -5,7 +5,6 @@ import re
 import sys
 import cPickle as pickle
 from matplotlib import pyplot as plt
-import logging
 from datareader import CorpusReader
 from parser import Parser
 import constants
@@ -334,10 +333,12 @@ def metropolis_hastings(old_dataset, n=1000, ap=None, outfile=sys.stdout):
         #print new_tsg.total_trees
 
         if new_likelihood > old_likelihood:
-            outfile.write("\t".join([str(i+1), "A", str(new_likelihood), str(new_likelihood), str(new_tsg.get_grammar_size()), str(new_tsg.total_trees)]) + "\n")
+            outfile.write("\t".join([str(i+1), "A", str(new_likelihood), str(new_likelihood), str(len(newRootFrequency.keys())), str(np.sum(newTreeFrequency.values()))]) + "\n")
             #print "accepted: ", new_likelihood, old_likelihood
             old_likelihood = new_likelihood
             old_dataset = new_dataset
+            treeFrequency = newTreeFrequency
+            rootFrequency = newRootFrequency
         else:
             if not ap:
                 p = np.exp(new_likelihood- old_likelihood)
@@ -345,7 +346,7 @@ def metropolis_hastings(old_dataset, n=1000, ap=None, outfile=sys.stdout):
                 p = ap
             r =np.random.binomial(1, p)
             if r:
-                outfile.write("\t".join([str(i+1), "F", str(new_likelihood), str(new_likelihood), str(new_tsg.get_grammar_size()), str(new_tsg.total_trees)]) + "\n")
+                outfile.write("\t".join([str(i+1), "F", str(new_likelihood), str(new_likelihood), str(len(newRootFrequency.keys())), str(np.sum(newTreeFrequency.values()))]) + "\n")
                 #print "forced: ", new_likelihood, old_likelihood
                 old_likelihood = new_likelihood
                 old_dataset = new_dataset
@@ -353,7 +354,7 @@ def metropolis_hastings(old_dataset, n=1000, ap=None, outfile=sys.stdout):
                 rootFrequency = newRootFrequency
             else:
                 # reject
-                outfile.write("\t".join([str(i+1), "R", str(new_likelihood), str(old_likelihood), str(new_tsg.get_grammar_size()), str(new_tsg.total_trees)]) + "\n")
+                outfile.write("\t".join([str(i+1), "R", str(new_likelihood), str(old_likelihood), str(len(newRootFrequency.keys())), str(np.sum(newTreeFrequency.values()))]) + "\n")
                 #print "rejected ", new_likelihood, old_likelihood
 
         print i, old_likelihood
