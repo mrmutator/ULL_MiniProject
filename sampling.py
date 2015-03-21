@@ -6,13 +6,16 @@ import sys
 import cPickle as pickle
 from matplotlib import pyplot as plt
 from datareader import CorpusReader
-from parser import Parser
+from parser import Parser, create_cdec_grammar
+import os
 import constants
+
 
 #----------- Begin Params ---------#
 CDEC_PATH = constants.CDEC_PATH
 WEIGHT_FILE = constants.WEIGHT_FILE
 INITIAL_INI = constants.INITIAL_INI
+TMP_DATA_DIR = constants.TMP_DATA_DIR
 #----------- End Params -----------#
 
 
@@ -76,31 +79,46 @@ def parse_dataset(dataset, ini_file):
     return parsed
 
 
-def computeLikelihoodOfParse(parse):
-    '''
-    Computes the likelihood of a given tree
-    '''
-    
-    eTrees = decomposeTSG(parse, update=False, statistcs=False)
-    probability = 1
-    for tree in eTrees:
-        #TODO: Call the cdec python wrapper to compute the inside probability of the tree
-        continue
 
-    return probability
-
-
-def get_dataset_likelihood(parses):
+def get_dataset_likelihood(raw_dataset, root_counts, tree_counts):
     '''
     Computes the likelihood of the whole dataset
     '''
-    
+
+    # generate grammar
+    grammar = create_cdec_grammar(root_counts, tree_counts)
+
+    # write grammar_file
+
+    outfile = open(TMP_DATA_DIR + "tmp_grammar.cfg", "w")
+    outfile.write(grammar)
+    outfile.close()
+
+    # write init_file
+
+    infile = open(INITIAL_INI, "r")
+    init = infile.read()
+
+    infile.close()
+
+    new_init = re.sub("grammar=.*?", "grammar=tmp_grammar.cfg")
+
+    outfile = open(TMP_DATA_DIR + "tmp_init.ini", "w")
+    outfile.write(new_init)
+    outfile.close()
+
+    parser = Parser(TMP_DATA_DIR + "tmp_init.ini", CDEC_PATH)
+
     likelihood = 0
-    for parse in parses:
-        likelihood += computeLikelihoodOfParse(parse)
+
+    for s in dataset:
+        likelihood += parser.get_inside_string(" ".join(s))
+
+    # delete tmp_files
+    os.remove(TMP_DATA_DIR + "tmp_grammar.cfg")
+    os.remove(TMP_DATA_DIR + "tmp_init.ini")
 
     return likelihood
-
 
 def getNonTerminals():
     '''
@@ -309,7 +327,7 @@ def make_random_candidate_change(treebank):
     return newParses
 
 
-def metropolis_hastings(old_dataset, n=1000, ap=None, outfile=sys.stdout):
+def metropolis_hastings(raw_dataset, old_dataset, n=1000, ap=None, outfile=sys.stdout):
     '''
     Runs Metropolis Hastings algorithm
     '''
@@ -322,10 +340,9 @@ def metropolis_hastings(old_dataset, n=1000, ap=None, outfile=sys.stdout):
     outfile.write("\t".join(["0", "A", str(old_likelihood), str(old_likelihood), str(len(treeFrequency.keys())), str(np.sum(treeFrequency.values()))]) + "\n")
 
     for i in range(n):
-#         new_dataset = make_random_candidate_change(old_dataset) # Lau: new method should return dataset with candidate changes
-        new_dataset = make_random_candidate_change(old_dataset)
-        get_dataset_likelihood(new_dataset)
-        old_likelihood, new_likelihood = get_dataset_likelihood(new_dataset) # lqrz: by passing the old and new block we can forloop only once to ge the likelihood.
+
+        new_dataset, new_tsg, _, _ = make_random_candidate_change(old_dataset)
+        new_likelihood = get_dataset_likelihood(raw_dataset, rootFrequency, treeFrequency) # lqrz: by passing the old and new block we can forloop only once to ge the likelihood.
         #if new_dataset == old_dataset:
         #    print "EQUAL!!"
 
@@ -469,11 +486,13 @@ data = reader.count_total
 parser = Parser(INITIAL_INI, CDEC_PATH)
 
 parses = []
+raw_dataset = []
 for s in data:
+    raw_dataset.append(s)
     s = ' '.join(str(s))
     parses.append(parser.get_best_parse(s))
 
 #parses = ['S (D 1)','S (S1 (NZ 8)) (S2 (D 0) (S2 (D 0) (S2 (D 0))))', 'S (S1 (NZ 3)) (S2 (D 5))']
 
 dataset = placeSubstitutionPoints(parses)
-final_dataset = metropolis_hastings(dataset, n=10)
+final_dataset = metropolis_hastings(raw_dataset, dataset, n=10)
