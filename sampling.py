@@ -140,6 +140,7 @@ def placeSubstitutionPoints(treebank):
     threshold = 0.3
 
     for tree in treebank:
+        decomposeTSG(tree,update=True,statistcs=True)
         convertedTree = []
 
         tags = tree.split(' ')
@@ -335,13 +336,13 @@ def metropolis_hastings(raw_dataset, old_dataset, n=1000, ap=None, outfile=sys.s
     global treeFrequency
     global rootFrequency
     
-    old_likelihood = get_dataset_likelihood(old_dataset)
+    old_likelihood = get_dataset_likelihood(old_dataset, rootFrequency, treeFrequency)
 
     outfile.write("\t".join(["0", "A", str(old_likelihood), str(old_likelihood), str(len(treeFrequency.keys())), str(np.sum(treeFrequency.values()))]) + "\n")
 
     for i in range(n):
 
-        new_dataset, new_tsg, _, _ = make_random_candidate_change(old_dataset)
+        new_dataset = make_random_candidate_change(old_dataset)
         new_likelihood = get_dataset_likelihood(raw_dataset, rootFrequency, treeFrequency) # lqrz: by passing the old and new block we can forloop only once to ge the likelihood.
         #if new_dataset == old_dataset:
         #    print "EQUAL!!"
