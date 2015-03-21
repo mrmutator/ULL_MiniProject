@@ -5,15 +5,16 @@ from math import exp
 
 class Parser(object):
 
-    def __init__(self, weight_file="weights"):
+    def __init__(self, grammar, weight_file):
         # Load decoder width configuration
         self.decoder = cdec.Decoder(formalism='scfg')
 
         # Read weights
         self.decoder.read_weights(weight_file)
 
-    def update_grammar(self, grammar):
         self.grammar = grammar
+
+
 
 
     def get_inside_string(self, string):
@@ -28,13 +29,13 @@ class Parser(object):
 
 
 if __name__ == "__main__":
-    parser = Parser("example.weights")
 
     grammar_f = open("example.cfg", "r")
     grammar = grammar_f.read()
     grammar_f.close()
 
-    parser.update_grammar(grammar)
+    parser = Parser(grammar, "example.weights")
+
 
     print parser.get_inside_string("a")
 
