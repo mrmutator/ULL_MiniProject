@@ -107,7 +107,7 @@ def get_dataset_likelihood(raw_dataset, root_counts, tree_counts):
     outfile.write(new_init)
     outfile.close()
 
-    par = Parser(TMP_DATA_DIR + "tmp_init.ini", CDEC_PATH)
+    parser = Parser(TMP_DATA_DIR + "tmp_init.ini", CDEC_PATH)
 
     likelihood = 0
 
@@ -273,6 +273,11 @@ def make_random_candidate_change(treebank):
 
         symbol = slots[random.randint(0,len(slots)-1)] # choose random symbol to insert star
         countSymbol = parse.count(symbol+' ') # take care not to count symbol*
+        
+        #TODO: not nice. -lqrz
+        if countSymbol==0:
+            return treebank
+        
         pSymbol = random.randint(1,countSymbol)
 
         # get index of chosen symbol
@@ -307,6 +312,11 @@ def make_random_candidate_change(treebank):
 
         # remove a star
         countStars = parse.count('*')
+        
+        #TODO: not nice. -lqrz
+        if countStars==0:
+            return treebank
+        
         pStar = random.randint(1,countStars) # choose star to eliminate
 
         # get index of chosen star
