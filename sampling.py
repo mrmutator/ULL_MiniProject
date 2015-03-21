@@ -77,17 +77,18 @@ def computeLikelihoodOfParse(parse):
     return probability
 
 
-def get_dataset_likelihood(rawBlock, newBlock):
-    newLikelihood = 0
-    oldLikelihood = 0
+def get_dataset_likelihood(parses):
+#     newLikelihood = 0
+#     oldLikelihood = 0
+    likelihood = 0
     for parse in parses:
-        newParse = parse.replace(rawBlock,newBlock)
-#             newLikelihood *= computeLikelihoodOfParse(newParse, newProbabilities)
-#             oldLikelihood *= computeLikelihoodOfParse(parse, probabilities)
-        newLikelihood += computeLikelihoodOfParse(newParse)
-        oldLikelihood += computeLikelihoodOfParse(parse)
+#         newParse = parse.replace(rawBlock,newBlock)
+#         newLikelihood *= computeLikelihoodOfParse(newParse, newProbabilities)
+#         oldLikelihood *= computeLikelihoodOfParse(parse, probabilities)
+#         newLikelihood += computeLikelihoodOfParse(newParse)
+        likelihood += computeLikelihoodOfParse(parse)
 
-    return oldLikelihood, newLikelihood
+    return likelihood
 
 
 
@@ -390,15 +391,15 @@ def make_random_candidate_change(treebank):
 
 
 def metropolis_hastings(old_dataset, n=1000, ap=None, outfile=sys.stdout):
-#     old_likelihood = get_dataset_likelihood(old_dataset)
+    old_likelihood = get_dataset_likelihood(old_dataset)
 
-    #TODO: move this write. We dont have the old_likelihood at this point.
-#     outfile.write("\t".join(["0", "A", str(old_likelihood), str(old_likelihood), str(old_tsg.get_grammar_size()), str(old_tsg.total_trees)]) + "\n")
+    outfile.write("\t".join(["0", "A", str(old_likelihood), str(old_likelihood), str(old_tsg.get_grammar_size()), str(old_tsg.total_trees)]) + "\n")
 
     for i in range(n):
 #         new_dataset = make_random_candidate_change(old_dataset) # Lau: new method should return dataset with candidate changes
-        new_dataset, new_tsg, rawBlock, newBlock = make_random_candidate_change(old_dataset)
-        old_likelihood, new_likelihood = get_dataset_likelihood(rawBlock, newBlock) # lqrz: by passing the old and new block we can forloop only once to ge the likelihood.
+        new_dataset, new_tsg, _, _ = make_random_candidate_change(old_dataset)
+        get_dataset_likelihood(new_dataset)
+        old_likelihood, new_likelihood = get_dataset_likelihood(new_dataset) # lqrz: by passing the old and new block we can forloop only once to ge the likelihood.
         #if new_dataset == old_dataset:
         #    print "EQUAL!!"
 
