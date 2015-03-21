@@ -6,6 +6,20 @@ import sys
 import cPickle as pickle
 from matplotlib import pyplot as plt
 import logging
+import parser
+
+WEIGHT_FILE = "weights"
+
+
+def parse_dataset(dataset, grammar):
+
+    p = parser.Parser(grammar=grammar, weight_file=WEIGHT_FILE)
+    parsed = []
+    for string in dataset:
+        parse = p.get_best_parse(string)
+        parsed.append(p)
+
+    return parsed
 
 
 #TODO: Check if we are gonna use this global dicts

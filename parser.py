@@ -1,61 +1,55 @@
 #coding: utf8
 import cdec
-import gzip
-from math import exp
-
+import numpy as np
+import subprocess
+import re
 
 
 def create_cdec_grammar(root_counts, tree_counts):
     grammar = ""
     for tree in tree_counts:
-        r = tree.split()[0]
+        root = tree.split()[0]
 
+        logprob = np.log(float(tree_counts[tree])/root_counts[root])
 
-
-
-
+    # TO-DO: not done yet
 
 
 class Parser(object):
 
-    def __init__(self, grammar, weight_file):
-        # Load decoder width configuration
-        self.decoder = cdec.Decoder(formalism='scfg')
-
-        # Read weights
-        self.decoder.read_weights(weight_file)
-
-        self.grammar = grammar
-
-
+    def __init__(self, config_file, path_cdec):
+        self.config_file = config_file
+        self.path_cdec = path_cdec
 
 
     def get_inside_string(self, string):
-        forest = self.decoder.translate(string, grammar=self.grammar)
-        I = forest.inside()
-        return I[-1]
+        parsing = subprocess.Popen([self.path_cdec, "-c", self.config_file, "-z" ], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        result = parsing.communicate(input=string + "\n")[0]
+        return float(re.search(r"log\(Z\): (-?\d+?\.\d+?)[^\d]", result).group(1))
 
     def get_best_parse(self, string):
-        forest = self.decoder.translate(string, grammar=self.grammar)
-        return forest.viterbi_trees()[0][1:-1]
+        parsing = subprocess.Popen([self.path_cdec, "-c", self.config_file, "-z" ], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        result = parsing.communicate(input=string + "\n")[0]
+        return re.search(r"tree: (\(.+\))\n", result).group(1)
 
     def get_random_parse(self, string):
-        forest = self.decoder.translate(string, grammar=self.grammar)
-        return list(forest.sample_trees(1))[0][1:-1]
+        # TO-DO: impolement
+        return None
 
 
 
 if __name__ == "__main__":
 
-    grammar_f = open("example.cfg", "r")
+    grammar_f = open("initial_grammar", "r")
     grammar = grammar_f.read()
     grammar_f.close()
 
-    parser = Parser(grammar, "example.weights")
+    parser = Parser("initial.ini", "/home/rwechsler/PycharmProjects/cdec/decoder/cdec")
 
 
-    print parser.get_inside_string("a")
+    test = "1 2"
 
-    print parser.get_best_parse("a")
 
-    print parser.get_random_parse("a")
+    print parser.get_inside_string(test)
+    print parser.get_best_parse(test)
+
