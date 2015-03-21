@@ -16,7 +16,46 @@ WEIGHT_FILE = "weights"
 INITIAL_INI = "initial.ini"
 
 
+treeFrequency = dict()
+rootFrequency = dict()
+newTreeFrequency = dict()
+newRootFrequency = dict()
 
+def updateDictionary(parse, update=True,statistcs=True):
+    global treeFrequency
+    global rootFrequency
+    global newTreeFrequency
+    global newRootFrequency
+    
+    # remove head and tail parenthesis
+    parse = parse[1:len(parse)-1]
+    parse = parse.strip()
+    
+    if update:
+        # get root
+        root = parse.split()[0]
+        
+        if statistcs: # update general stats
+            # update frequency of this tree
+            treeFrequency.setdefault(parse,0)
+            treeFrequency[parse] += 1
+            
+            # update the root frequency
+            rootFrequency.setdefault(root,0)
+            rootFrequency[root] += 1
+
+        else: # update new stats
+            
+            newTreeFrequency.setdefault(parse,0)
+            newTreeFrequency[parse] += 1
+            
+            newRootFrequency.setdefault(root,0)
+            newRootFrequency[root] += 1
+        
+    derivations = set()
+    derivations.add(parse)
+        
+    return derivations
 
 
 def parse_dataset(dataset, ini_file):
@@ -36,7 +75,7 @@ def computeLikelihoodOfParse(parse):
     Computes the likelihood of a given tree
     '''
     
-    eTrees = decomposeTSG(parse)
+    eTrees = decomposeTSG(parse, update=False, statistcs=False)
     probability = 1
     for tree in eTrees:
         #TODO: Call the cdec python wrapper to compute the inside probability of the tree
@@ -140,7 +179,7 @@ def getBlock(firstStarIndex, tree):
     return rawBlock, substitutionSymbol
 
 
-def decomposeTSG(tree):
+def decomposeTSG(tree,update=False,statistcs=False):
     '''
     Decomposes a tree which has substitution points into elementary trees.
     :param tree: marked tree with substitution points
@@ -148,10 +187,7 @@ def decomposeTSG(tree):
     '''
 
     if tree.count('*')==0:
-#         derivations = updateDictionary(tree,update=update,statistcs=statistcs)
-        parse = tree.strip()
-        derivations = set()
-        derivations.add(parse)
+        derivations = updateDictionary(tree,update=update,statistcs=statistcs)
         
         return derivations
 
@@ -168,8 +204,8 @@ def decomposeTSG(tree):
 
     result = set()
     # recursive call to keep decomposing
-    result = result.union(decomposeTSG(newL))
-    result = result.union(decomposeTSG(block))
+    result = result.union(decomposeTSG(newL,update=update,statistcs=statistcs))
+    result = result.union(decomposeTSG(block,update=update,statistcs=statistcs))
 
     return result
 
@@ -262,7 +298,7 @@ def make_random_candidate_change(treebank):
     for tree in treebank:
         newParse = tree.replace(rawBlock,newBlock)
         newParses.append(newParse)
-        elementaryTrees = decomposeTSG(newParse) # stats==True: update general
+        elementaryTrees = decomposeTSG(newParse, update=True,statistcs=False) # stats==True: update general
 
     return newParses, elementaryTrees, rawBlock, newBlock
 
@@ -272,9 +308,12 @@ def metropolis_hastings(old_dataset, n=1000, ap=None, outfile=sys.stdout):
     Runs Metropolis Hastings algorithm
     '''
     
+    global treeFrequency
+    global rootFrequency
+    
     old_likelihood = get_dataset_likelihood(old_dataset)
 
-    outfile.write("\t".join(["0", "A", str(old_likelihood), str(old_likelihood), str(old_tsg.get_grammar_size()), str(old_tsg.total_trees)]) + "\n")
+    outfile.write("\t".join(["0", "A", str(old_likelihood), str(old_likelihood), str(len(rootFrequency.keys())), str(np.sum(treeFrequency.values()))]) + "\n")
 
     for i in range(n):
 #         new_dataset = make_random_candidate_change(old_dataset) # Lau: new method should return dataset with candidate changes
@@ -303,6 +342,8 @@ def metropolis_hastings(old_dataset, n=1000, ap=None, outfile=sys.stdout):
                 #print "forced: ", new_likelihood, old_likelihood
                 old_likelihood = new_likelihood
                 old_dataset = new_dataset
+                treeFrequency = newTreeFrequency
+                rootFrequency = newRootFrequency
             else:
                 # reject
                 outfile.write("\t".join([str(i+1), "R", str(new_likelihood), str(old_likelihood), str(new_tsg.get_grammar_size()), str(new_tsg.total_trees)]) + "\n")
