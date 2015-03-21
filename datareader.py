@@ -1,5 +1,6 @@
 __author__ = 'nguyen'
 
+import numpy
 import matplotlib.pyplot as plt
 
 class CorpusReader:
@@ -153,6 +154,7 @@ class CorpusReader:
         keys = range(limit)
         number_form = []
         alphabetic_form = []
+        total = []
         for number in keys:
             if number in self.count_num:
                 number_form.append(self.count_num[number])
@@ -163,8 +165,31 @@ class CorpusReader:
                 alphabetic_form.append(self.count_alpha[number])
             else:
                 alphabetic_form.append(0)
-        return number_form, alphabetic_form
 
+            if number in self.count_total:
+                total.append(self.count_total[number])
+            else:
+                total.append(0)
+        return number_form, alphabetic_form, total
+
+
+    def getIndexFromProb(self, probList, randomValue):
+        probArray = numpy.array(probList)
+        probArray = probArray * 1. / numpy.sum(probArray, axis=0)
+        cumprob = numpy.cumsum(probArray)
+        return numpy.size(cumprob, 0) - numpy.count_nonzero(cumprob > randomValue)
+
+
+    def sample(self, limit=4000, size=20000, uniformprob=0.001):
+        samples = numpy.zeros(limit)
+        _, _, total = self.get_statistics(limit)
+        for _ in range(size):
+            if numpy.random.sample() < uniformprob:
+                # Sample uniformly
+                samples[numpy.random.randint(0, limit)] += 1
+            else:
+                samples[self.getIndexFromProb(total, numpy.random.sample())] += 1
+        return samples
 
     def add(self, dictToAdd, key):
         if key not in dictToAdd:
@@ -175,12 +200,29 @@ class CorpusReader:
 
 
 if __name__ == '__main__':
+    # Initialize the reader
     reader = CorpusReader()
-#     reader.read_data('wsj01-21-without-tags-traces-punctuation-m40.txt', 'CD')
-    reader.read_data('numbers', None)
-    limit = 4000
-    number_form, alphabetic_form = reader.get_statistics(limit=limit)
+
+    # Read numeral data
+    reader.read_data('wsj01-21-without-tags-traces-punctuation-m40.txt', 'CD')
+#     reader.read_data('numbers', None)
+
+    # Limit to range [0,200)
+    limit = 200
+
+    # Get distributions
+    number_form, alphabetic_form, total = reader.get_statistics(limit=limit)
+
     keys = range(limit)
-    plt.bar(keys, number_form, color='g')
+
+    # Plot the true distribution
+    plt.bar(keys, alphabetic_form, color='g')
+    plt.show()
+
+    # Sample from the distribution
+    samples = reader.sample(limit, size=20000, uniformprob=0.001)
+
+    # Plot the sampled distribution
+    plt.bar(keys, samples, color='g')
     plt.show()
     pass
