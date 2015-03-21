@@ -112,7 +112,7 @@ def get_dataset_likelihood(raw_dataset, root_counts, tree_counts):
     likelihood = 0
 
     for s in raw_dataset:
-        likelihood += parser.get_inside_string(" ".join(s))
+        likelihood += parser.get_inside_string(" ".join(str(s)))
 
     # delete tmp_files
     os.remove(TMP_DATA_DIR + "tmp_grammar.cfg")
