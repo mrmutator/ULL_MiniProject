@@ -6,6 +6,7 @@ import sys
 import cPickle as pickle
 from matplotlib import pyplot as plt
 import logging
+from datareader import CorpusReader
 
 
 #TODO: Check if we are gonna use this global dicts
@@ -430,6 +431,10 @@ def run_experiment(outfile_name, subset_size=10000, ap=None, iterations=10000):
 
     #num_dist, _ = get_empirical_data("data/wsj01-21-without-tags-traces-punctuation-m40.txt")
 
+    reader = CorpusReader()
+    
+    reader.read_data('numbers', None)
+    
     x, y = zip(*[(x,num_dist[x]) for x in num_dist.keys() if x <= 100])
 
     plt.figure()
