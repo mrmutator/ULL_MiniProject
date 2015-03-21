@@ -38,7 +38,7 @@ def updateDictionary(parse, update=True,statistcs=True):
     global newRootFrequency
     
     # remove head and tail parenthesis
-    parse = parse[1:len(parse)-1]
+#     parse = parse[1:len(parse)-1]
     parse = parse.strip()
     
     if update:
