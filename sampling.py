@@ -16,8 +16,8 @@ from parser import Parser
 # rootFrequency = dict()
 # probabilities = dict()
 # parses = list()
-# 
-# 
+#
+#
 # newTreeFrequency = dict()
 # newRootFrequency = dict()
 # newProbabilities = dict()
@@ -29,41 +29,41 @@ def updateDictionary(parse, update=True,statistcs=True):
 #     global newTreeFrequency
 #     global newRootFrequency
 #     global newProbabilities
-    
+
     # remove head and tail parenthesis
 #     parse = parse[1:len(parse)-1]
     parse = parse.strip()
-    
+
 #     if update:
 #         # get root
 #         root = parse.split()[0]
-#         
+#
 #         # get subtree
 #         tree = ' '.join(parse.split()[1:])
-#         
+#
 #         if statistcs: # update general stats
 #             # update frequency of this tree
 #             treeFrequency.setdefault(parse,0)
 #             treeFrequency[parse] += 1
-#             
+#
 #             # update the root frequency
 #             rootFrequency.setdefault(root,0)
 #             rootFrequency[root] += 1
-#             
+#
 #             # update tree derivation
 #             treeDerivation.setdefault(root,set())
 #             treeDerivation[root].add(tree)
 #         else: # update new stats
-#             
+#
 #             newTreeFrequency.setdefault(parse,0)
 #             newTreeFrequency[parse] += 1
-#             
+#
 #             newRootFrequency.setdefault(root,0)
 #             newRootFrequency[root] += 1
-        
+
     derivations = set()
     derivations.add(parse)
-        
+
     return derivations
 
 
@@ -73,7 +73,7 @@ def computeLikelihoodOfParse(parse):
     for tree in eTrees:
         #TODO: Call the cdec python wrapper to compute the inside probability of the tree
         continue
-    
+
     return probability
 
 
@@ -86,7 +86,7 @@ def get_dataset_likelihood(rawBlock, newBlock):
 #             oldLikelihood *= computeLikelihoodOfParse(parse, probabilities)
         newLikelihood += computeLikelihoodOfParse(newParse)
         oldLikelihood += computeLikelihoodOfParse(parse)
-    
+
     return oldLikelihood, newLikelihood
 
 
@@ -187,7 +187,7 @@ def getNonTerminals():
     '''
     Returns a list of non terminal symbols. Does not include the root symbol.
     '''
-    
+
     return ['S1', 'S2', 'D', 'NZ'] #TODO: Fix this. Get the list dynamically.
 
 
@@ -197,11 +197,11 @@ def placeSubstitutionPoints(treebank):
     :param treebank: Treebank corpus
     :return: Marked treebank corpus
     '''
-    
+
     convertedTreebank = []
-    
+
     threshold = 0.3
-    
+
     for tree in treebank:
         convertedTree = []
 
@@ -222,10 +222,10 @@ def placeSubstitutionPoints(treebank):
                     newTag = tag
             else:
                 newTag = tag
-            
+
             convertedTree.append(newTag)
-        
-        
+
+
         convertedTreebank.append(' '.join(convertedTree))
 
     return convertedTreebank
@@ -272,7 +272,7 @@ def decomposeTSG(tree, update=False, statistcs=False):
     :param tree: marked tree with substitution points
     :return:
     '''
-    
+
     if tree.count('*')==0:
         derivations = updateDictionary(tree,update=update,statistcs=statistcs)
         return derivations
@@ -303,7 +303,7 @@ def make_random_candidate_change(treebank):
 	:param dataset:
 	:return:
 	'''
-    
+
     pChange = random.random() # add or delete star?
 
     option = False
@@ -379,13 +379,13 @@ def make_random_candidate_change(treebank):
 
         # remove first star from block
         newBlock = rawBlock.replace('*','',1) # theres always gonna be, at least, one.
-    
+
     newParses = list()
     for tree in treebank:
         newParse = tree.replace(rawBlock,newBlock)
         newParses.append(newParse)
         elementaryTrees = decomposeTSG(newParse, update=True,statistcs=False) # stats==True: update general
-    
+
     return newParses, elementaryTrees, rawBlock, newBlock
 
 
@@ -394,7 +394,7 @@ def metropolis_hastings(old_dataset, n=1000, ap=None, outfile=sys.stdout):
 
     #TODO: move this write. We dont have the old_likelihood at this point.
 #     outfile.write("\t".join(["0", "A", str(old_likelihood), str(old_likelihood), str(old_tsg.get_grammar_size()), str(old_tsg.total_trees)]) + "\n")
-    
+
     for i in range(n):
 #         new_dataset = make_random_candidate_change(old_dataset) # Lau: new method should return dataset with candidate changes
         new_dataset, new_tsg, rawBlock, newBlock = make_random_candidate_change(old_dataset)
@@ -436,19 +436,20 @@ def run_experiment(outfile_name, subset_size=10000, ap=None, iterations=10000):
     #num_dist, _ = get_empirical_data("data/wsj01-21-without-tags-traces-punctuation-m40.txt")
 
     reader = CorpusReader()
-    
-    data = reader.read_data('numbers', None)
-    
+
+#     data = reader.read_data('numbers', None)
+    reader.read_data('wsj01-21-without-tags-traces-punctuation-m40.txt', 'CD')
+
     grammar_f = open("example.cfg", "r")
     grammar = grammar_f.read()
     grammar_f.close()
 
     parser = Parser(grammar, "example.weights")
-    
+
     parses = []
     for s in data:
         parses.append(parser.get_best_parse(s))
-    
+
     x, y = zip(*[(x,num_dist[x]) for x in num_dist.keys() if x <= 100])
 
     plt.figure()
@@ -463,7 +464,11 @@ def run_experiment(outfile_name, subset_size=10000, ap=None, iterations=10000):
     plt.hist(numbers, bins=10)
     plt.savefig(outfile_name + "init_b" + ".png")
 
-    subset = get_random_subset(num_dist, size=10000)
+
+    # Limit to range [0,4000)
+    # With really small probability, perform uniform sampling
+    # The return variable is a numpy 1D array
+    subset = reader.sample(limit=4000, size=20000, uniformprob=0.001)
 
     # Assign a parse and randomly mark substitution sites
 
@@ -518,24 +523,24 @@ def run_experiment(outfile_name, subset_size=10000, ap=None, iterations=10000):
 #---------------- For debugging purposes
 
 reader = CorpusReader()
-    
+
 reader.read_data('numbers', None)
 data = reader.count_total
 
-    
+
 grammar_f = open("initial_grammar", "r")
 grammar = grammar_f.read()
 grammar_f.close()
 
 parser = Parser(grammar, "example.weights")
-    
+
 # parses = []
 # for s in data:
 #     s = ' '.join(str(s))
 #     if len(s)>10:
 #         continue
 #     parses.append(parser.get_best_parse(s))
-    
+
 parses = ['S (D 1)','S (S1 (NZ 8)) (S2 (D 0) (S2 (D 0) (S2 (D 0))))', 'S (S1 (NZ 3)) (S2 (D 5))']
 
 dataset = placeSubstitutionPoints(parses)
