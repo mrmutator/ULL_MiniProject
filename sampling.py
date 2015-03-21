@@ -9,14 +9,19 @@ import logging
 from datareader import CorpusReader
 from parser import Parser
 
-
+CDEC_PATH = "/home/rwechsler/PycharmProjects/cdec/decoder/cdec"
 
 WEIGHT_FILE = "weights"
 
+INITIAL_INI = "initial.ini"
 
-def parse_dataset(dataset, grammar):
 
-    p = parser.Parser(grammar=grammar, weight_file=WEIGHT_FILE)
+
+
+
+def parse_dataset(dataset, ini_file):
+
+    p = parser.Parser(ini_file, CDEC_PATH)
     parsed = []
     for string in dataset:
         parse = p.get_best_parse(string)
@@ -544,20 +549,15 @@ reader.read_data('numbers', None)
 data = reader.count_total
 
 
-grammar_f = open("initial_grammar", "r")
-grammar = grammar_f.read()
-grammar_f.close()
 
-parser = Parser(grammar, "example.weights")
+parser = Parser(INITIAL_INI, CDEC_PATH)
 
-# parses = []
-# for s in data:
-#     s = ' '.join(str(s))
-#     if len(s)>10:
-#         continue
-#     parses.append(parser.get_best_parse(s))
+parses = []
+for s in data:
+    s = ' '.join(str(s))
+    parses.append(parser.get_best_parse(s))
 
-parses = ['S (D 1)','S (S1 (NZ 8)) (S2 (D 0) (S2 (D 0) (S2 (D 0))))', 'S (S1 (NZ 3)) (S2 (D 5))']
+#parses = ['S (D 1)','S (S1 (NZ 8)) (S2 (D 0) (S2 (D 0) (S2 (D 0))))', 'S (S1 (NZ 3)) (S2 (D 5))']
 
 dataset = placeSubstitutionPoints(parses)
 final_dataset = metropolis_hastings(dataset, n=10)
