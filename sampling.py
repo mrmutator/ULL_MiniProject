@@ -5,23 +5,27 @@ import re
 import sys
 import cPickle as pickle
 from matplotlib import pyplot as plt
-import logging
 from datareader import CorpusReader
 from parser import Parser, create_cdec_grammar
 import os
+import constants
 
-CDEC_PATH = "/home/rwechsler/PycharmProjects/cdec/decoder/cdec"
 
-WEIGHT_FILE = "weights"
+#----------- Begin Params ---------#
+CDEC_PATH = constants.CDEC_PATH
+WEIGHT_FILE = constants.WEIGHT_FILE
+INITIAL_INI = constants.INITIAL_INI
+TMP_DATA_DIR = constants.TMP_DATA_DIR
+#----------- End Params -----------#
 
-INITIAL_INI = "initial.ini"
 
-TMP_DATA_DIR = "tmp/"
-
+#----------- Begin global vars ---------#
 treeFrequency = dict()
 rootFrequency = dict()
 newTreeFrequency = dict()
 newRootFrequency = dict()
+#----------- End global vars -----------#
+
 
 def updateDictionary(parse, update=True,statistcs=True):
     '''
@@ -346,10 +350,12 @@ def metropolis_hastings(old_dataset, n=1000, ap=None, outfile=sys.stdout):
         #print new_tsg.total_trees
 
         if new_likelihood > old_likelihood:
-            outfile.write("\t".join([str(i+1), "A", str(new_likelihood), str(new_likelihood), str(new_tsg.get_grammar_size()), str(new_tsg.total_trees)]) + "\n")
+            outfile.write("\t".join([str(i+1), "A", str(new_likelihood), str(new_likelihood), str(len(newRootFrequency.keys())), str(np.sum(newTreeFrequency.values()))]) + "\n")
             #print "accepted: ", new_likelihood, old_likelihood
             old_likelihood = new_likelihood
             old_dataset = new_dataset
+            treeFrequency = newTreeFrequency
+            rootFrequency = newRootFrequency
         else:
             if not ap:
                 p = np.exp(new_likelihood- old_likelihood)
@@ -357,7 +363,7 @@ def metropolis_hastings(old_dataset, n=1000, ap=None, outfile=sys.stdout):
                 p = ap
             r =np.random.binomial(1, p)
             if r:
-                outfile.write("\t".join([str(i+1), "F", str(new_likelihood), str(new_likelihood), str(new_tsg.get_grammar_size()), str(new_tsg.total_trees)]) + "\n")
+                outfile.write("\t".join([str(i+1), "F", str(new_likelihood), str(new_likelihood), str(len(newRootFrequency.keys())), str(np.sum(newTreeFrequency.values()))]) + "\n")
                 #print "forced: ", new_likelihood, old_likelihood
                 old_likelihood = new_likelihood
                 old_dataset = new_dataset
@@ -365,7 +371,7 @@ def metropolis_hastings(old_dataset, n=1000, ap=None, outfile=sys.stdout):
                 rootFrequency = newRootFrequency
             else:
                 # reject
-                outfile.write("\t".join([str(i+1), "R", str(new_likelihood), str(old_likelihood), str(new_tsg.get_grammar_size()), str(new_tsg.total_trees)]) + "\n")
+                outfile.write("\t".join([str(i+1), "R", str(new_likelihood), str(old_likelihood), str(len(newRootFrequency.keys())), str(np.sum(newTreeFrequency.values()))]) + "\n")
                 #print "rejected ", new_likelihood, old_likelihood
 
         print i, old_likelihood
