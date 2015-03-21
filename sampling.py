@@ -140,7 +140,7 @@ def placeSubstitutionPoints(treebank):
     threshold = 0.3
 
     for tree in treebank:
-        decomposeTSG(tree,update=True,statistcs=True)
+        decomposeTSG(tree,update=True,statistcs=True) # update statistics in rootFrequency and treeFrequency
         convertedTree = []
 
         tags = tree.split(' ')
@@ -165,6 +165,7 @@ def placeSubstitutionPoints(treebank):
 
 
         convertedTreebank.append(' '.join(convertedTree))
+        decomposeTSG(tree,update=True,statistcs=False) # update statistics in newRootFrequency and newTreeFrequency
 
     return convertedTreebank
 
@@ -336,7 +337,8 @@ def metropolis_hastings(raw_dataset, old_dataset, n=1000, ap=None, outfile=sys.s
     global treeFrequency
     global rootFrequency
     
-    old_likelihood = get_dataset_likelihood(old_dataset, rootFrequency, treeFrequency)
+    # likelihood before running the Metrop-Hast algorithm. Considering the substitution points.
+    old_likelihood = get_dataset_likelihood(old_dataset, newRootFrequency, newTreeFrequency)
 
     outfile.write("\t".join(["0", "A", str(old_likelihood), str(old_likelihood), str(len(treeFrequency.keys())), str(np.sum(treeFrequency.values()))]) + "\n")
 
