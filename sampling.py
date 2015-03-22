@@ -165,7 +165,7 @@ def placeSubstitutionPoints(treebank):
 
 
         convertedTreebank.append(' '.join(convertedTree))
-        decomposeTSG(tree,update=True,statistcs=False) # update statistics in newRootFrequency and newTreeFrequency
+        decomposeTSG(convertedTree,update=True,statistcs=False) # update statistics in newRootFrequency and newTreeFrequency
 
     return convertedTreebank
 
@@ -175,8 +175,8 @@ def getBlock(firstStarIndex, tree):
     Retrieves the elementary tree of a marked tee
     :param firstStarIndex: Index of the '*' symbol in the tree
     :param tree: tree containing the elementary tree to be extracted
-	:return:
-	'''
+    :return:
+    '''
     # Get first previous parenthesis
     for i in range(firstStarIndex):
         firstParenthesis = tree.find('(',firstStarIndex-i,firstStarIndex)
@@ -239,10 +239,10 @@ def decomposeTSG(tree,update=False,statistcs=False):
 def make_random_candidate_change(treebank, action='add'):
     '''
     Given a grammar, makes a random change (adds or removes substitution point) and
-	retrieves the new elementary trees.
-	:param dataset:
-	:return:
-	'''
+    retrieves the new elementary trees.
+    :param dataset:
+    :return:
+    '''
 
     pChange = random.random() # add or delete star?
 
