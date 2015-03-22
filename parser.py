@@ -68,3 +68,9 @@ if __name__ == "__main__":
 
     print parser.get_inside_string(test)
     print parser.get_best_parse(test)
+
+
+    #tree_counts = {"S (NZ 3) (S2 S2)": 1}
+    #root_counts = {"S": 1}
+
+    #print create_cdec_grammar(root_counts, tree_counts)
