@@ -236,7 +236,7 @@ def decomposeTSG(tree,update=False,statistcs=False):
     return result
 
 
-def make_random_candidate_change(treebank):
+def make_random_candidate_change(treebank, action='add'):
     '''
     Given a grammar, makes a random change (adds or removes substitution point) and
 	retrieves the new elementary trees.
@@ -250,7 +250,7 @@ def make_random_candidate_change(treebank):
     prevent = 0 # prevent the candidate search while loops from getting stuck
     probAdding = 0.5 # probability of making a change by adding a star
 
-    if pChange < probAdding: # add a star
+    if pChange < probAdding or action=='add': # add a star
         # select a parse that has a slot to add a star
         while not option:
 
@@ -276,7 +276,7 @@ def make_random_candidate_change(treebank):
         
         #TODO: not nice. -lqrz
         if countSymbol==0:
-            return treebank
+            return make_random_candidate_change(treebank, action='remove')
         
         pSymbol = random.randint(1,countSymbol)
 
@@ -315,7 +315,7 @@ def make_random_candidate_change(treebank):
         
         #TODO: not nice. -lqrz
         if countStars==0:
-            return treebank
+            return make_random_candidate_change(treebank, action='add')
         
         pStar = random.randint(1,countStars) # choose star to eliminate
 
