@@ -70,7 +70,7 @@ def updateDictionary(parse, update=True,statistcs=True):
 
 def parse_dataset(dataset, ini_file):
 
-    p = parser.Parser(ini_file, CDEC_PATH)
+    p = Parser(ini_file, CDEC_PATH)
     parsed = []
     for string in dataset:
         parse = p.get_best_parse(' '.join(string))
@@ -356,7 +356,7 @@ def metropolis_hastings(raw_dataset, old_dataset, n=1000, ap=None, outfile=sys.s
     old_likelihood = get_dataset_likelihood(raw_dataset, newRootFrequency, newTreeFrequency)
 
 
-    #outfile.write("\t".join(["0", "A", str(old_likelihood), str(old_likelihood), str(len(treeFrequency.keys())), str(np.sum(treeFrequency.values()))]) + "\n")
+    outfile.write("\t".join(["0", "A", str(old_likelihood), str(old_likelihood), str(len(newTreeFrequency.keys())), str(np.sum(newTreeFrequency.values()))]) + "\n")
 
     for i in range(n):
         newTreeFrequency = dict()
@@ -364,11 +364,7 @@ def metropolis_hastings(raw_dataset, old_dataset, n=1000, ap=None, outfile=sys.s
         new_dataset = make_random_candidate_change(old_dataset)
         new_likelihood = get_dataset_likelihood(raw_dataset, newRootFrequency, newTreeFrequency) # lqrz: by passing the old and new block we can forloop only once to ge the likelihood.
         #if new_dataset == old_dataset:
-        #    print "EQUAL!!"
-
-        #print new_tsg.get_grammar_size()
-        #print new_tsg.total_trees
-
+        #   print "EQUAL!!"
 
         if new_likelihood > old_likelihood:
             outfile.write("\t".join([str(i+1), "A", str(new_likelihood), str(new_likelihood), str(len(newTreeFrequency.keys())), str(np.sum(newTreeFrequency.values()))]) + "\n")
@@ -392,131 +388,81 @@ def metropolis_hastings(raw_dataset, old_dataset, n=1000, ap=None, outfile=sys.s
                 rootFrequency = dict(newRootFrequency)
             else:
                 # reject
-                outfile.write("\t".join([str(i+1), "R", str(new_likelihood), str(old_likelihood), str(len(newTreeFrequency.keys())), str(np.sum(newTreeFrequency.values()))]) + "\n")
+                outfile.write("\t".join([str(i+1), "R", str(new_likelihood), str(old_likelihood), str(len(treeFrequency.keys())), str(np.sum(treeFrequency.values()))]) + "\n")
                 #print "rejected ", new_likelihood, old_likelihood
                 newRootFrequency = dict(rootFrequency)
                 newTreeFrequency = dict(treeFrequency)
 
         print i, old_likelihood
 
-    return old_dataset
+    return old_dataset, old_likelihood, rootFrequency, treeFrequency
 
-def run_experiment(outfile_name, subset_size=10000, ap=None, iterations=10000):
+def run_experiment(outfile_name, limit=4000, size=10000, uniformprob=None, ap=None, iterations=10000):
     
-    global treeFrequency
-    global rootFrequency
-    
-    # take a subset of numerals from the empirical data
-
-    #num_dist, _ = get_empirical_data("data/wsj01-21-without-tags-traces-punctuation-m40.txt")
 
     reader = CorpusReader()
-
-#     data = reader.read_data('numbers', None)
     reader.read_data('wsj01-21-without-tags-traces-punctuation-m40.txt', 'CD')
 
-    grammar_f = open("example.cfg", "r")
-    grammar = grammar_f.read()
-    grammar_f.close()
+    subset = reader.sample(limit=limit, size=size, uniformprob=uniformprob)
 
-    parser = Parser(grammar, "example.weights")
-
-    parses = []
-    for s in data:
-        parses.append(parser.get_best_parse(s))
-
-    x, y = zip(*[(x,num_dist[x]) for x in num_dist.keys() if x <= 100])
-
-    plt.figure()
-    plt.bar(x,y)
-    plt.savefig(outfile_name + "init" + ".png")
-    numbers = []
-    for n in num_dist.keys():
-        if n < 1000:
-            numbers += [n] * num_dist[n]
-
-    plt.figure()
-    plt.hist(numbers, bins=10)
-    plt.savefig(outfile_name + "init_b" + ".png")
+    # TODO: plot subset distribution for comparison with final distribution and store it!
 
 
-    # Limit to range [0,4000)
-    # With really small probability, perform uniform sampling
-    # The return variable is a numpy 1D array
-    subset = reader.sample(limit=4000, size=20000, uniformprob=0.001)
+    raw_dataset = [str(int(i)) for i in subset]
 
-    # Assign a parse and randomly mark substitution sites
+    print "Parsing dataset."
+    parses = parse_dataset(raw_dataset, INITIAL_INI)
 
-    # dataset = [random_mark_subst_site(det_parse_num(str(i))) for i in subset] # comment - lqrz
-
-    dataset = placeSubstitutionPoints(subset) # lqrz
+    print "Adding substitution site markers"
+    dataset = placeSubstitutionPoints(parses)
 
     outfile = open(outfile_name + "_results.txt", "w")
 
-    final_dataset = metropolis_hastings(dataset, n=iterations, ap=ap, outfile=outfile)
+    print "Starting Metropolis-Hastings."
+    final_dataset, final_likelihood, final_rootFrequency, final_treeFrequency = metropolis_hastings(raw_dataset, dataset, n=iterations, ap=ap, outfile=outfile)
 
-#     dmp = [final_tsg, final_dataset]
-    dmp = [treeFrequency, rootFrequency, final_dataset]
+    print "Generating final grammar"
+    # generate grammar
+    final_grammar = create_cdec_grammar(final_rootFrequency, final_treeFrequency)
+
+    dmp = [final_dataset, final_rootFrequency, final_treeFrequency, final_grammar]
 
     pickle.dump(dmp, open(outfile_name+"_grammar.pkl", "wb"))
 
     outfile.close()
 
-#     rules = final_tsg.get_rule_dict()
-    rules = treeFrequency.keys() # the keys are gonna have all the elementary trees
 
-    cum_rules = transfer_rules(rules)
-
-    terminals = ["0","1", "2", "3", "4", "5", "6", "7", "8", "9"]
-
-    # only base dist
-
-    freq_dict = sample_rules(cum_rules, terminals, n=10000)
-
-    x, y = zip(*[(x,freq_dict[x]) for x in freq_dict.keys() if x <= 100])
-
-    plt.figure()
-    plt.bar(x,y)
-    plt.savefig(outfile_name + "final" + ".png")
-
-    numbers = []
-    for n in freq_dict.keys():
-        if n < 1000:
-            numbers += [n] * num_dist[n]
-
-    plt.figure()
-    plt.hist(numbers, bins=10)
-    plt.savefig(outfile_name + "final_b" + ".png")
+    # TODO: sample from final grammar, and plot sampled distribution and store it.
 
 
 
     print "Experiment " + outfile_name + " done."
 
 
-#run_experiment("results/10000_2000", subset_size=10000, ap=None, iterations=2000)
+def test_method():
+    #---------------- For debugging purposes
+
+    reader = CorpusReader()
+
+    reader.read_data('numbers', None)
+    data = reader.count_total
+
+
+
+    parser = Parser(INITIAL_INI, CDEC_PATH)
+
+    parses = []
+    raw_dataset = []
+    for s in data.keys()[:100]:
+        raw_dataset.append(str(s))
+        s = ' '.join(str(s))
+        parses.append(parser.get_best_parse(s))
+
+    #parses = ['S (S1 (NZ 2)) (S2 (D 3) (S2 (D 4) (S2 (D 5))))']
+
+    dataset = placeSubstitutionPoints(parses)
+    #dataset = ['S (S1 (NZ 2)) (S2* (D* 3) (S2 (D* 4) (S2 (D* 5))))']
+    final_dataset = metropolis_hastings(raw_dataset, dataset, n=100)
+
+run_experiment("results/test", limit=100, ap=None, iterations=50)
 #run_experiment("results/10000_2000_001", subset_size=10000, ap=0.01, iterations=2000)
-
-
-#---------------- For debugging purposes
-
-# reader = CorpusReader()
-# 
-# reader.read_data('numbers', None)
-# data = reader.count_total
-# 
-# 
-# 
-parser = Parser(INITIAL_INI, CDEC_PATH)
-# 
-# parses = []
-raw_dataset = []
-# for s in data.keys()[:100]:
-#     raw_dataset.append(str(s))
-#     s = ' '.join(str(s))
-#     parses.append(parser.get_best_parse(s))
-
-parses = ['S (S1 (NZ 2)) (S2 (D 3) (S2 (D 4) (S2 (D 5))))']
-
-dataset = placeSubstitutionPoints(parses)
-dataset = ['S (S1 (NZ 2)) (S2* (D* 3) (S2 (D* 4) (S2 (D* 5))))']
-final_dataset = metropolis_hastings(raw_dataset, dataset, n=100)
