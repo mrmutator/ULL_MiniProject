@@ -47,10 +47,12 @@ class Sampler:
         self.rule_S = []
         self.rule_S1 = []
         self.rule_S2 = []
+        self.rule_D = []
 
         self.rule_S_count = []
         self.rule_S1_count = []
         self.rule_S2_count = []
+        self.rule_D_count = []
 
         for key, value in final_treeFrequency.items():
             if key[0] == '(':
@@ -65,6 +67,9 @@ class Sampler:
             elif root == 'S2':
                 self.rule_S2.append(key)
                 self.rule_S2_count.append(value)
+            elif root == 'D ':
+                self.rule_D.append(key)
+                self.rule_D_count.append(value)
 
 
     def getleftstr(self, treestr):
@@ -86,8 +91,10 @@ class Sampler:
     def parse(self, treestr):
         if not treestr:
             return None
+        treestr = treestr.strip()
         if treestr[0] == '(':
             treestr = treestr[1:-1]
+
         root = treestr[:treestr.find(' ')]
         leftbracket = treestr.find('(')
 
@@ -158,6 +165,8 @@ class Sampler:
                         treestr = self.rule_S1[self.getIndexFromProb(self.rule_S1_count, numpy.random.sample())]
                     elif root == 'S2':
                         treestr = self.rule_S2[self.getIndexFromProb(self.rule_S2_count, numpy.random.sample())]
+                    elif root == 'D':
+                        treestr = self.rule_D[self.getIndexFromProb(self.rule_D_count, numpy.random.sample())]
                     subtree = self.parse(treestr)
                     tree.left = subtree.left
                     tree.right = subtree.right
@@ -178,20 +187,25 @@ class Sampler:
 
 
 if __name__ == '__main__':
-    inal_dataset, final_rootFrequency, final_treeFrequency, final_grammar = pickle.load(open('test_final.pkl', 'rb'))
+    inal_dataset, final_rootFrequency, final_treeFrequency, final_grammar = pickle.load(open('4000_1000_600_final.pkl', 'rb'))
 #     initial_dist = pickle.load(open('test_initial_dist.pkl', 'rb'))
 
     # Limit to range [0,200)
     limit = 200
 
     keys = range(limit)
+    size = 200000
 
 
     # Sample from the grammar
     sampler = Sampler(final_treeFrequency)
-    samples = sampler.sample(limit=limit, size=20000)
+    samples = sampler.sample(limit=limit, size=size)
+
 
     # Plot the sampled distribution
+    plt.xlabel('Number')
+    plt.ylabel('Frequency')
+    plt.title(str(size) + ' natural numbers in [0, ' + str(limit) + ') sampled from the non-deterministic grammar')
     plt.bar(keys, samples, color='g')
     plt.show()
 

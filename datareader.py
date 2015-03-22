@@ -225,7 +225,7 @@ if __name__ == '__main__':
 
 
     # Limit to range [0,200)
-    limit = 200
+    limit = 4000
 
     # Get distributions
     number_form, alphabetic_form, total = reader.get_statistics(limit=limit)
@@ -233,6 +233,9 @@ if __name__ == '__main__':
     keys = range(limit)
 
     # Plot the true distribution
+    plt.xlabel('Number')
+    plt.ylabel('Frequency')
+    plt.title('Distribution of natural numbers in alphabetic form in [0, ' + str(limit) + ') from the treebank')
     plt.bar(keys, alphabetic_form, color='g')
     plt.show()
 
