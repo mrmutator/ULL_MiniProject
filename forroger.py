@@ -43,7 +43,7 @@ class Tree:
 
 
 class Sampler:
-    def __init__(self, final_rootFrequency):
+    def __init__(self, final_treeFrequency):
         self.rule_S = []
         self.rule_S1 = []
         self.rule_S2 = []
@@ -179,15 +179,16 @@ class Sampler:
 
 if __name__ == '__main__':
     inal_dataset, final_rootFrequency, final_treeFrequency, final_grammar = pickle.load(open('test_final.pkl', 'rb'))
-    initial_dist = pickle.load(open('test_initial_dist.pkl', 'rb'))
+#     initial_dist = pickle.load(open('test_initial_dist.pkl', 'rb'))
 
     # Limit to range [0,200)
     limit = 200
 
     keys = range(limit)
 
+
     # Sample from the grammar
-    sampler = Sampler(final_rootFrequency)
+    sampler = Sampler(final_treeFrequency)
     samples = sampler.sample(limit=limit, size=20000)
 
     # Plot the sampled distribution
