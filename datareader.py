@@ -2,6 +2,7 @@ __author__ = 'nguyen'
 
 import numpy
 import matplotlib.pyplot as plt
+import random
 
 class CorpusReader:
     def __init__(self):
@@ -203,6 +204,16 @@ class CorpusReader:
 
         return dictToAdd
 
+    def get_sampled_dataset(self, size=1000):
+        dataset = []
+
+        for n, c in self.count_total.items():
+            dataset += [str(n)] * c
+
+        random.shuffle(dataset)
+
+        return dataset[:size]
+
 
 if __name__ == '__main__':
     # Initialize the reader
@@ -211,6 +222,7 @@ if __name__ == '__main__':
     # Read numeral data
     reader.read_data('wsj01-21-without-tags-traces-punctuation-m40.txt', 'CD')
 #     reader.read_data('numbers', None)
+
 
     # Limit to range [0,200)
     limit = 200

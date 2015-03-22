@@ -9,6 +9,7 @@ from datareader import CorpusReader
 from parser import Parser, create_cdec_grammar
 import os
 import constants
+from collections import defaultdict
 
 
 #----------- Begin Params ---------#
@@ -363,8 +364,8 @@ def metropolis_hastings(raw_dataset, old_dataset, n=1000, ap=None, outfile=sys.s
         newRootFrequency = dict()
         new_dataset = make_random_candidate_change(old_dataset)
         new_likelihood = get_dataset_likelihood(raw_dataset, newRootFrequency, newTreeFrequency) # lqrz: by passing the old and new block we can forloop only once to ge the likelihood.
-        #if new_dataset == old_dataset:
-        #   print "EQUAL!!"
+        if new_dataset == old_dataset:
+            print "EQUAL!!"
 
         if new_likelihood > old_likelihood:
             outfile.write("\t".join([str(i+1), "A", str(new_likelihood), str(new_likelihood), str(len(newTreeFrequency.keys())), str(np.sum(newTreeFrequency.values()))]) + "\n")
@@ -403,13 +404,20 @@ def run_experiment(outfile_name, limit=4000, size=10000, uniformprob=None, ap=No
     reader = CorpusReader()
     reader.read_data('wsj01-21-without-tags-traces-punctuation-m40.txt', 'CD')
 
-    dist = reader.sample(limit=limit, size=size, uniformprob=uniformprob)
+    if limit is None:
+        raw_dataset = reader.get_sampled_dataset(size=size)
+        dist = defaultdict(int)
+        for n in raw_dataset:
+            dist[int(n)] += 1
+
+    else:
+        dist = reader.sample(limit=limit, size=size, uniformprob=uniformprob)
+        raw_dataset = []
+        for i, n in enumerate(dist):
+            raw_dataset += [str(i)] * n
+
 
     pickle.dump(dist, open(outfile_name + "_inital_dist.pkl", "wb"))
-
-    raw_dataset = []
-    for i, n in enumerate(dist):
-        raw_dataset += [str(i)] * n
 
 
     print "Parsing dataset."
@@ -466,5 +474,5 @@ def test_method():
     #dataset = ['S (S1 (NZ 2)) (S2* (D* 3) (S2 (D* 4) (S2 (D* 5))))']
     final_dataset = metropolis_hastings(raw_dataset, dataset, n=100)
 
-run_experiment("results/test", limit=4000, size=100, ap=None, iterations=100)
+run_experiment("unlim_1000_600", limit=None, size=1000, ap=None, iterations=600)
 #run_experiment("results/10000_2000_001", subset_size=10000, ap=0.01, iterations=2000)
