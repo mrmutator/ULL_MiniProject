@@ -235,13 +235,16 @@ def decomposeTSG(tree,update=False,statistcs=False):
     return result
 
 
-def make_random_candidate_change(treebank, action='add'):
+def make_random_candidate_change(treebank, action=None):
     '''
     Given a grammar, makes a random change (adds or removes substitution point) and
     retrieves the new elementary trees.
     :param dataset:
     :return:
     '''
+    
+    global newRootFrequency
+    global newTreeFrequency
 
     pChange = random.random() # add or delete star?
 
@@ -356,7 +359,8 @@ def metropolis_hastings(raw_dataset, old_dataset, n=1000, ap=None, outfile=sys.s
     #outfile.write("\t".join(["0", "A", str(old_likelihood), str(old_likelihood), str(len(treeFrequency.keys())), str(np.sum(treeFrequency.values()))]) + "\n")
 
     for i in range(n):
-
+        newTreeFrequency = dict()
+        newRootFrequency = dict()
         new_dataset = make_random_candidate_change(old_dataset)
         new_likelihood = get_dataset_likelihood(raw_dataset, newRootFrequency, newTreeFrequency) # lqrz: by passing the old and new block we can forloop only once to ge the likelihood.
         #if new_dataset == old_dataset:
@@ -495,23 +499,24 @@ def run_experiment(outfile_name, subset_size=10000, ap=None, iterations=10000):
 
 #---------------- For debugging purposes
 
-reader = CorpusReader()
-
-reader.read_data('numbers', None)
-data = reader.count_total
-
-
-
+# reader = CorpusReader()
+# 
+# reader.read_data('numbers', None)
+# data = reader.count_total
+# 
+# 
+# 
 parser = Parser(INITIAL_INI, CDEC_PATH)
-
-parses = []
+# 
+# parses = []
 raw_dataset = []
-for s in data.keys()[:100]:
-    raw_dataset.append(str(s))
-    s = ' '.join(str(s))
-    parses.append(parser.get_best_parse(s))
+# for s in data.keys()[:100]:
+#     raw_dataset.append(str(s))
+#     s = ' '.join(str(s))
+#     parses.append(parser.get_best_parse(s))
 
-#parses = ['S (D 1)','S (S1 (NZ 8)) (S2 (D 0) (S2 (D 0) (S2 (D 0))))', 'S (S1 (NZ 3)) (S2 (D 5))']
+parses = ['S (S1 (NZ 2)) (S2 (D 3) (S2 (D 4) (S2 (D 5))))']
 
 dataset = placeSubstitutionPoints(parses)
+dataset = ['S (S1 (NZ 2)) (S2* (D* 3) (S2 (D* 4) (S2 (D* 5))))']
 final_dataset = metropolis_hastings(raw_dataset, dataset, n=100)
