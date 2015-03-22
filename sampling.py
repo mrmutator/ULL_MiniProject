@@ -269,13 +269,13 @@ def make_random_candidate_change(treebank, action='add'):
 #         if not option: # i got stuck in the while loop
 #             logging.info('Couldnt find a replacement slot')
 #             continue
+        #TODO: not nice. -lqrz
+        if len(slots)==0:
+            return make_random_candidate_change(treebank, action='remove')
 
         symbol = slots[random.randint(0,len(slots)-1)] # choose random symbol to insert star
         countSymbol = parse.count(symbol+' ') # take care not to count symbol*
         
-        #TODO: not nice. -lqrz
-        if countSymbol==0:
-            return make_random_candidate_change(treebank, action='remove')
         
         pSymbol = random.randint(1,countSymbol)
 
