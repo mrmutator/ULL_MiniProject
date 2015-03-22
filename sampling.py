@@ -369,8 +369,8 @@ def metropolis_hastings(raw_dataset, old_dataset, n=1000, ap=None, outfile=sys.s
             #print "accepted: ", new_likelihood, old_likelihood
             old_likelihood = new_likelihood
             old_dataset = new_dataset
-            treeFrequency = newTreeFrequency
-            rootFrequency = newRootFrequency
+            treeFrequency = dict(newTreeFrequency)
+            rootFrequency = dict(newRootFrequency)
         else:
             if not ap:
                 p = np.exp(new_likelihood- old_likelihood)
@@ -382,12 +382,13 @@ def metropolis_hastings(raw_dataset, old_dataset, n=1000, ap=None, outfile=sys.s
                 #print "forced: ", new_likelihood, old_likelihood
                 old_likelihood = new_likelihood
                 old_dataset = new_dataset
-                treeFrequency = newTreeFrequency
-                rootFrequency = newRootFrequency
+                treeFrequency = dict(newTreeFrequency)
+                rootFrequency = dict(newRootFrequency)
             else:
                 # reject
                 outfile.write("\t".join([str(i+1), "R", str(new_likelihood), str(old_likelihood), str(len(newTreeFrequency.keys())), str(np.sum(newTreeFrequency.values()))]) + "\n")
                 #print "rejected ", new_likelihood, old_likelihood
+                newRootFrequency = dict(rootFrequency)
 
         print i, old_likelihood
 
