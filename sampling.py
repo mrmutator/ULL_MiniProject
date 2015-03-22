@@ -403,12 +403,17 @@ def run_experiment(outfile_name, limit=4000, size=10000, uniformprob=None, ap=No
     reader = CorpusReader()
     reader.read_data('wsj01-21-without-tags-traces-punctuation-m40.txt', 'CD')
 
-    subset = reader.sample(limit=limit, size=size, uniformprob=uniformprob)
+    dist = reader.sample(limit=limit, size=size, uniformprob=uniformprob)
+
+
+    raw_dataset = []
+    for i, n in enumerate(dist):
+        raw_dataset += [str(i)] * n
+
 
     # TODO: plot subset distribution for comparison with final distribution and store it!
 
 
-    raw_dataset = [str(int(i)) for i in subset]
 
     print "Parsing dataset."
     parses = parse_dataset(raw_dataset, INITIAL_INI)
@@ -464,5 +469,5 @@ def test_method():
     #dataset = ['S (S1 (NZ 2)) (S2* (D* 3) (S2 (D* 4) (S2 (D* 5))))']
     final_dataset = metropolis_hastings(raw_dataset, dataset, n=100)
 
-run_experiment("results/test", limit=100, ap=None, iterations=50)
+run_experiment("results/4000_1000_300", limit=4000, size=1000, ap=None, iterations=300)
 #run_experiment("results/10000_2000_001", subset_size=10000, ap=0.01, iterations=2000)
