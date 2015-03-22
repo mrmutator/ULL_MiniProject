@@ -163,9 +163,8 @@ def placeSubstitutionPoints(treebank):
 
             convertedTree.append(newTag)
 
-
         convertedTreebank.append(' '.join(convertedTree))
-        decomposeTSG(convertedTree,update=True,statistcs=False) # update statistics in newRootFrequency and newTreeFrequency
+        decomposeTSG(' '.join(convertedTree),update=True,statistcs=False) # update statistics in newRootFrequency and newTreeFrequency
 
     return convertedTreebank
 
