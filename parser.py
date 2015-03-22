@@ -60,6 +60,14 @@ class Parser(object):
         except AttributeError:
             raise Exception("PARSE FAIL: " + result)
 
+    def get_max_likelihood_string(self, string):
+        parsing = subprocess.Popen([self.path_cdec, "-c", self.config_file, "-z" ], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        result = parsing.communicate(input=string + "\n")[0]
+        try:
+            return float(re.search(r"Viterbi logp: (.*)", result).group(1))
+        except AttributeError:
+            raise Exception("PARSE FAIL: " + result)
+
 
     def get_random_parse(self, string):
         # TO-DO: implement
@@ -69,20 +77,18 @@ class Parser(object):
 
 if __name__ == "__main__":
 
-    grammar_f = open("initial_grammar", "r")
-    grammar = grammar_f.read()
-    grammar_f.close()
 
-    parser = Parser("det_initial.ini", "/home/rwechsler/PycharmProjects/cdec/decoder/cdec")
+    parser = Parser("initial.ini", "/home/rwechsler/PycharmProjects/cdec/decoder/cdec")
 
 
-    test = "2 0 0 0 0 0 0"
+    test = "1 2 3"
 
 
     print parser.get_inside_string(test)
 
-    test = "2 0 0 0 0 0 0"
     print parser.get_best_parse(test)
+
+    print parser.get_max_likelihood_string(test)
 
 
     #tree_counts = {"S (NZ 3) (S2 S2)": 1}

@@ -81,7 +81,7 @@ def parse_dataset(dataset, ini_file):
 
 
 
-def get_dataset_likelihood(raw_dataset, root_counts, tree_counts):
+def get_dataset_likelihood(raw_dataset, root_counts, tree_counts, viterbi=False):
     '''
     Computes the likelihood of the whole dataset
     '''
@@ -112,8 +112,14 @@ def get_dataset_likelihood(raw_dataset, root_counts, tree_counts):
 
     likelihood = 0
 
+    prob_f = parser.get_inside_string
+
+    if viterbi:
+        prob_f = parser.get_max_likelihood_string
+
+
     for s in raw_dataset:
-        likelihood += parser.get_inside_string(" ".join(s))
+        likelihood += prob_f(" ".join(s))
 
     # delete tmp_files
     os.remove(TMP_DATA_DIR + "tmp_grammar.cfg")
@@ -126,7 +132,7 @@ def getNonTerminals():
     Returns a list of non terminal symbols. Does not include the root symbol.
     '''
 
-    return ['S1', 'S2', 'D', 'NZ'] #TODO: Fix this. Get the list dynamically.
+    return ['S1', 'S2', 'D', 'NZ', 'P'] #TODO: Fix this. Get the list dynamically.
 
 
 def placeSubstitutionPoints(treebank):
@@ -342,7 +348,7 @@ def make_random_candidate_change(treebank, action=None):
     return newParses
 
 
-def metropolis_hastings(raw_dataset, old_dataset, n=1000, ap=None, outfile=sys.stdout):
+def metropolis_hastings(raw_dataset, old_dataset, n=1000, ap=None, viterbi=False, outfile=sys.stdout):
     '''
     Runs Metropolis Hastings algorithm
     '''
@@ -354,7 +360,7 @@ def metropolis_hastings(raw_dataset, old_dataset, n=1000, ap=None, outfile=sys.s
     
 
     # likelihood before running the Metrop-Hast algorithm. Considering the substitution points.
-    old_likelihood = get_dataset_likelihood(raw_dataset, newRootFrequency, newTreeFrequency)
+    old_likelihood = get_dataset_likelihood(raw_dataset, newRootFrequency, newTreeFrequency, viterbi=viterbi)
 
 
     outfile.write("\t".join(["0", "A", str(old_likelihood), str(old_likelihood), str(len(newTreeFrequency.keys())), str(np.sum(newTreeFrequency.values()))]) + "\n")
@@ -363,7 +369,7 @@ def metropolis_hastings(raw_dataset, old_dataset, n=1000, ap=None, outfile=sys.s
         newTreeFrequency = dict()
         newRootFrequency = dict()
         new_dataset = make_random_candidate_change(old_dataset)
-        new_likelihood = get_dataset_likelihood(raw_dataset, newRootFrequency, newTreeFrequency) # lqrz: by passing the old and new block we can forloop only once to ge the likelihood.
+        new_likelihood = get_dataset_likelihood(raw_dataset, newRootFrequency, newTreeFrequency, viterbi=viterbi) # lqrz: by passing the old and new block we can forloop only once to ge the likelihood.
         if new_dataset == old_dataset:
             print "EQUAL!!"
 
@@ -398,7 +404,7 @@ def metropolis_hastings(raw_dataset, old_dataset, n=1000, ap=None, outfile=sys.s
 
     return old_dataset, old_likelihood, rootFrequency, treeFrequency
 
-def run_experiment(outfile_name, limit=4000, size=10000, uniformprob=None, ap=None, iterations=10000):
+def run_experiment(outfile_name, limit=4000, size=10000, uniformprob=None, ap=None, iterations=10000, viterbi=False):
     
 
     reader = CorpusReader()
@@ -429,7 +435,7 @@ def run_experiment(outfile_name, limit=4000, size=10000, uniformprob=None, ap=No
     outfile = open(outfile_name + "_results.txt", "w")
 
     print "Starting Metropolis-Hastings."
-    final_dataset, final_likelihood, final_rootFrequency, final_treeFrequency = metropolis_hastings(raw_dataset, dataset, n=iterations, ap=ap, outfile=outfile)
+    final_dataset, final_likelihood, final_rootFrequency, final_treeFrequency = metropolis_hastings(raw_dataset, dataset, n=iterations, ap=ap, outfile=outfile, viterbi=viterbi)
 
     print "Generating final grammar"
     # generate grammar
@@ -474,5 +480,5 @@ def test_method():
     #dataset = ['S (S1 (NZ 2)) (S2* (D* 3) (S2 (D* 4) (S2 (D* 5))))']
     final_dataset = metropolis_hastings(raw_dataset, dataset, n=100)
 
-run_experiment("unlim_1000_600", limit=None, size=1000, ap=None, iterations=600)
+run_experiment("results/test_vit", limit=4000, size=100, ap=None, iterations=600, viterbi=True)
 #run_experiment("results/10000_2000_001", subset_size=10000, ap=0.01, iterations=2000)
