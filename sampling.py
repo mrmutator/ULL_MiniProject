@@ -346,6 +346,8 @@ def metropolis_hastings(raw_dataset, old_dataset, n=1000, ap=None, outfile=sys.s
     
     global treeFrequency
     global rootFrequency
+    global newTreeFrequency
+    global newRootFrequency
     
 
     # likelihood before running the Metrop-Hast algorithm. Considering the substitution points.
