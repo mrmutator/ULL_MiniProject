@@ -144,9 +144,9 @@ def placeSubstitutionPoints(treebank):
         convertedTree = []
 
         tags = tree.split(' ')
-        print tags
+        #print tags
         for tag in tags:
-            print tag
+            #print tag
 #             match = re.match(r'.*S ',n).group()
 #             if tag=='(S':
 
@@ -366,6 +366,7 @@ def metropolis_hastings(raw_dataset, old_dataset, n=1000, ap=None, outfile=sys.s
         #print new_tsg.get_grammar_size()
         #print new_tsg.total_trees
 
+
         if new_likelihood > old_likelihood:
             outfile.write("\t".join([str(i+1), "A", str(new_likelihood), str(new_likelihood), str(len(newTreeFrequency.keys())), str(np.sum(newTreeFrequency.values()))]) + "\n")
             #print "accepted: ", new_likelihood, old_likelihood
@@ -506,7 +507,7 @@ parser = Parser(INITIAL_INI, CDEC_PATH)
 
 parses = []
 raw_dataset = []
-for s in data.keys()[:10]:
+for s in data.keys()[:100]:
     raw_dataset.append(str(s))
     s = ' '.join(str(s))
     parses.append(parser.get_best_parse(s))
@@ -514,4 +515,4 @@ for s in data.keys()[:10]:
 #parses = ['S (D 1)','S (S1 (NZ 8)) (S2 (D 0) (S2 (D 0) (S2 (D 0))))', 'S (S1 (NZ 3)) (S2 (D 5))']
 
 dataset = placeSubstitutionPoints(parses)
-final_dataset = metropolis_hastings(raw_dataset, dataset, n=10)
+final_dataset = metropolis_hastings(raw_dataset, dataset, n=100)

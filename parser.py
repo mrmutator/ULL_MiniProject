@@ -13,7 +13,7 @@ def create_cdec_grammar(root_counts, tree_counts):
 
         logprob = np.log(float(tree_counts[tree])/root_counts[root])
 
-        leaves = re.findall(r" (\w+?)\)", tree)
+        leaves = re.findall(r"[ |\(](\w+?)\)", tree)
         i = 0
         for j, l in enumerate(leaves):
             if l not in terminals:
@@ -22,7 +22,7 @@ def create_cdec_grammar(root_counts, tree_counts):
 
         RH = " ".join(leaves)
 
-        rule = "[" + root + "]" + " ||| " + RH + " ||| " + RH + " ||| LogProb=" + str(logprob) + "\n"
+        rule = "[" + root.lstrip("(") + "]" + " ||| " + RH + " ||| " + RH + " ||| LogProb=" + str(logprob) + "\n"
 
         grammar += rule
 
