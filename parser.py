@@ -13,7 +13,11 @@ def create_cdec_grammar(root_counts, tree_counts):
 
         logprob = np.log(float(tree_counts[tree])/root_counts[root])
 
-        leaves = re.findall(r"[ |\(](\w+?)\)", tree)
+        stree = re.sub(r" (\w+?) ", r" \1)", tree + ")")
+        stree = re.sub(r"\((\w+)\)", r"\1)", stree)
+
+        leaves = re.findall(r"[ |\(](\w+?)\)", stree)
+        #leaves = re.findall(r"[^\(](\w+)[\)]", stree)
         i = 0
         for j, l in enumerate(leaves):
             if l not in terminals:
@@ -69,15 +73,15 @@ if __name__ == "__main__":
     grammar = grammar_f.read()
     grammar_f.close()
 
-    parser = Parser("initial.ini", "/home/rwechsler/PycharmProjects/cdec/decoder/cdec")
+    parser = Parser("det_initial.ini", "/home/rwechsler/PycharmProjects/cdec/decoder/cdec")
 
 
-    test = "1 2"
+    test = "2 0 0 0 0 0 0"
 
 
     print parser.get_inside_string(test)
 
-    test = "1 2 3"
+    test = "2 0 0 0 0 0 0"
     print parser.get_best_parse(test)
 
 
