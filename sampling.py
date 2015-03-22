@@ -346,6 +346,8 @@ def metropolis_hastings(raw_dataset, old_dataset, n=1000, ap=None, outfile=sys.s
     
     global treeFrequency
     global rootFrequency
+    global newTreeFrequency
+    global newRootFrequency
     
 
     # likelihood before running the Metrop-Hast algorithm. Considering the substitution points.
@@ -389,6 +391,7 @@ def metropolis_hastings(raw_dataset, old_dataset, n=1000, ap=None, outfile=sys.s
                 outfile.write("\t".join([str(i+1), "R", str(new_likelihood), str(old_likelihood), str(len(newTreeFrequency.keys())), str(np.sum(newTreeFrequency.values()))]) + "\n")
                 #print "rejected ", new_likelihood, old_likelihood
                 newRootFrequency = dict(rootFrequency)
+                newTreeFrequency = dict(treeFrequency)
 
         print i, old_likelihood
 
