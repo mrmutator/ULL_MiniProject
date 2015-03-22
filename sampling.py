@@ -405,14 +405,11 @@ def run_experiment(outfile_name, limit=4000, size=10000, uniformprob=None, ap=No
 
     dist = reader.sample(limit=limit, size=size, uniformprob=uniformprob)
 
+    pickle.dump(dist, open(outfile_name + "_inital_dist.pkl", "wb"))
 
     raw_dataset = []
     for i, n in enumerate(dist):
         raw_dataset += [str(i)] * n
-
-
-    # TODO: plot subset distribution for comparison with final distribution and store it!
-
 
 
     print "Parsing dataset."
@@ -432,7 +429,7 @@ def run_experiment(outfile_name, limit=4000, size=10000, uniformprob=None, ap=No
 
     dmp = [final_dataset, final_rootFrequency, final_treeFrequency, final_grammar]
 
-    pickle.dump(dmp, open(outfile_name+"_grammar.pkl", "wb"))
+    pickle.dump(dmp, open(outfile_name+"_final.pkl", "wb"))
 
     outfile.close()
 
@@ -469,5 +466,5 @@ def test_method():
     #dataset = ['S (S1 (NZ 2)) (S2* (D* 3) (S2 (D* 4) (S2 (D* 5))))']
     final_dataset = metropolis_hastings(raw_dataset, dataset, n=100)
 
-run_experiment("results/4000_1000_300", limit=4000, size=1000, ap=None, iterations=300)
+run_experiment("results/test", limit=4000, size=100, ap=None, iterations=100)
 #run_experiment("results/10000_2000_001", subset_size=10000, ap=0.01, iterations=2000)
