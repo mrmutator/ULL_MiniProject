@@ -3,7 +3,7 @@ import cdec
 import numpy as np
 import subprocess
 import re
-
+import sys
 
 def create_cdec_grammar(root_counts, tree_counts):
     terminals = ['0','1','2','3','4','5','6','7','8','9']
@@ -40,13 +40,22 @@ class Parser(object):
 
     def get_inside_string(self, string):
         parsing = subprocess.Popen([self.path_cdec, "-c", self.config_file, "-z" ], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-        result = parsing.communicate(input=string + "\n")[0]
-        return float(re.search(r"log\(Z\): (-?\d+?\.\d+?)[^\d]", result).group(1))
+        results = parsing.communicate(input=string + "\n")
+        result = results[0]
+        try:
+            return float(re.search(r"log\(Z\): (.*)", result).group(1))
+        except AttributeError:
+            raise Exception("PARSE FAIL: " + result)
+
 
     def get_best_parse(self, string):
         parsing = subprocess.Popen([self.path_cdec, "-c", self.config_file, "-z" ], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         result = parsing.communicate(input=string + "\n")[0]
-        return re.search(r"tree: (\(.+\))\n", result).group(1)[1:-1]
+        try:
+            return re.search(r"tree: (\(.+\))\n", result).group(1)[1:-1]
+        except AttributeError:
+            raise Exception("PARSE FAIL: " + result)
+
 
     def get_random_parse(self, string):
         # TO-DO: implement
@@ -67,6 +76,8 @@ if __name__ == "__main__":
 
 
     print parser.get_inside_string(test)
+
+    test = "1 2 3"
     print parser.get_best_parse(test)
 
 
