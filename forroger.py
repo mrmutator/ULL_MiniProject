@@ -181,13 +181,14 @@ class Sampler:
 
     def generate_tree(self):
         treestr = self.rule_S[self.getIndexFromProb(self.rule_S_count, numpy.random.sample())]
+        print treestr
         return self.expand_tree(self.parse(treestr))
 
 
 
 
 if __name__ == '__main__':
-    inal_dataset, final_rootFrequency, final_treeFrequency, final_grammar = pickle.load(open('4000_1000_600_final.pkl', 'rb'))
+    inal_dataset, final_rootFrequency, final_treeFrequency, final_grammar = pickle.load(open('deterministic_final.pkl', 'rb'))
 #     initial_dist = pickle.load(open('test_initial_dist.pkl', 'rb'))
 
     # Limit to range [0,200)
@@ -206,7 +207,7 @@ if __name__ == '__main__':
     # Plot the sampled distribution
     plt.xlabel('Number')
     plt.ylabel('Frequency')
-    plt.title(str(size) + ' natural numbers in [0, ' + str(limit) + ') sampled from the non-deterministic grammar')
+    plt.title(str(size) + ' natural numbers in [0, ' + str(limit) + ') sampled from the deterministic grammar')
     plt.bar(keys, samples, color='g')
     plt.show()
 

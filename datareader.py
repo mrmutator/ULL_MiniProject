@@ -234,11 +234,11 @@ if __name__ == '__main__':
     size = 200000
 
     # Plot the true distribution
-#     plt.xlabel('Number')
-#     plt.ylabel('Frequency')
-#     plt.title('Distribution of natural numbers in alphabetic form in [0, ' + str(limit) + ') from the treebank')
-#     plt.bar(keys, total, color='g')
-#     plt.show()
+    plt.xlabel('Number')
+    plt.ylabel('Frequency')
+    plt.title('Distribution of natural numbers in alphabetic form in [0, ' + str(limit) + ') from the treebank')
+    plt.bar(keys, total, color='g')
+    plt.show()
 
     # Sample from the distribution
     samples = reader.sample(limit, size=size, uniformprob=0)
