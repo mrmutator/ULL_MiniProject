@@ -191,7 +191,7 @@ if __name__ == '__main__':
 #     initial_dist = pickle.load(open('test_initial_dist.pkl', 'rb'))
 
     # Limit to range [0,200)
-    limit = 200
+    limit = 4000
 
     keys = range(limit)
     size = 200000
@@ -200,6 +200,7 @@ if __name__ == '__main__':
     # Sample from the grammar
     sampler = Sampler(final_treeFrequency)
     samples = sampler.sample(limit=limit, size=size)
+
 
 
     # Plot the sampled distribution
