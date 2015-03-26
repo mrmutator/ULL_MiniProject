@@ -225,21 +225,29 @@ if __name__ == '__main__':
 
 
     # Limit to range [0,200)
-    limit = 200
+    limit = 4000
 
     # Get distributions
     number_form, alphabetic_form, total = reader.get_statistics(limit=limit)
 
     keys = range(limit)
+    size = 200000
 
     # Plot the true distribution
-    plt.bar(keys, alphabetic_form, color='g')
+    plt.xlabel('Number')
+    plt.ylabel('Frequency')
+    plt.title('Distribution of natural numbers in alphabetic form in [0, ' + str(limit) + ') from the treebank')
+    plt.bar(keys, total, color='g')
     plt.show()
 
     # Sample from the distribution
-    samples = reader.sample(limit, size=20000, uniformprob=0.001)
+    samples = reader.sample(limit, size=size, uniformprob=0)
+
 
     # Plot the sampled distribution
+    plt.xlabel('Number')
+    plt.ylabel('Frequency')
+    plt.title(str(size) + ' natural numbers in [0, ' + str(limit) + ') sampled from the true distribution')
     plt.bar(keys, samples, color='g')
     plt.show()
     pass

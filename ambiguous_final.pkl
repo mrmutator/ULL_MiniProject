@@ -1,0 +1,2387 @@
+(lp1
+(lp2
+S'S (D 1)'
+p3
+aS'S (D 1)'
+p4
+aS'S (D 1)'
+p5
+aS'S (D 1)'
+p6
+aS'S (D 1)'
+p7
+aS'S (D 1)'
+p8
+aS'S (D 1)'
+p9
+aS'S (D 1)'
+p10
+aS'S (D 1)'
+p11
+aS'S (D 1)'
+p12
+aS'S (D 1)'
+p13
+aS'S (D 1)'
+p14
+aS'S (D 1)'
+p15
+aS'S (D 1)'
+p16
+aS'S (D 1)'
+p17
+aS'S (D 1)'
+p18
+aS'S (D 1)'
+p19
+aS'S (D 1)'
+p20
+aS'S (D 1)'
+p21
+aS'S (D 1)'
+p22
+aS'S (D 1)'
+p23
+aS'S (D 1)'
+p24
+aS'S (D 1)'
+p25
+aS'S (D 1)'
+p26
+aS'S (D 1)'
+p27
+aS'S (D 1)'
+p28
+aS'S (D 1)'
+p29
+aS'S (D 1)'
+p30
+aS'S (D 1)'
+p31
+aS'S (D 1)'
+p32
+aS'S (D 1)'
+p33
+aS'S (D 1)'
+p34
+aS'S (D 1)'
+p35
+aS'S (D 1)'
+p36
+aS'S (D 1)'
+p37
+aS'S (D 1)'
+p38
+aS'S (D 1)'
+p39
+aS'S (D 1)'
+p40
+aS'S (D 1)'
+p41
+aS'S (D 1)'
+p42
+aS'S (D 1)'
+p43
+aS'S (D 1)'
+p44
+aS'S (D 1)'
+p45
+aS'S (D 1)'
+p46
+aS'S (D 1)'
+p47
+aS'S (D 1)'
+p48
+aS'S (D 1)'
+p49
+aS'S (D 1)'
+p50
+aS'S (D 1)'
+p51
+aS'S (D 1)'
+p52
+aS'S (D 1)'
+p53
+aS'S (D 1)'
+p54
+aS'S (D 1)'
+p55
+aS'S (D 1)'
+p56
+aS'S (D 1)'
+p57
+aS'S (D 1)'
+p58
+aS'S (D 1)'
+p59
+aS'S (D 1)'
+p60
+aS'S (D 1)'
+p61
+aS'S (D 1)'
+p62
+aS'S (D 1)'
+p63
+aS'S (D 1)'
+p64
+aS'S (D 1)'
+p65
+aS'S (D 1)'
+p66
+aS'S (D 1)'
+p67
+aS'S (D 1)'
+p68
+aS'S (D 1)'
+p69
+aS'S (D 1)'
+p70
+aS'S (D 1)'
+p71
+aS'S (D 1)'
+p72
+aS'S (D 1)'
+p73
+aS'S (D 1)'
+p74
+aS'S (D 1)'
+p75
+aS'S (D 1)'
+p76
+aS'S (D 1)'
+p77
+aS'S (D 1)'
+p78
+aS'S (D 1)'
+p79
+aS'S (D 1)'
+p80
+aS'S (D 1)'
+p81
+aS'S (D 1)'
+p82
+aS'S (D 1)'
+p83
+aS'S (D 1)'
+p84
+aS'S (D 1)'
+p85
+aS'S (D 1)'
+p86
+aS'S (D 1)'
+p87
+aS'S (D 1)'
+p88
+aS'S (D 1)'
+p89
+aS'S (D 1)'
+p90
+aS'S (D 1)'
+p91
+aS'S (D 1)'
+p92
+aS'S (D 1)'
+p93
+aS'S (D 1)'
+p94
+aS'S (D 1)'
+p95
+aS'S (D 1)'
+p96
+aS'S (D 1)'
+p97
+aS'S (D 1)'
+p98
+aS'S (D 1)'
+p99
+aS'S (D 1)'
+p100
+aS'S (D 1)'
+p101
+aS'S (D 1)'
+p102
+aS'S (D 1)'
+p103
+aS'S (D 1)'
+p104
+aS'S (D 1)'
+p105
+aS'S (D 1)'
+p106
+aS'S (D 1)'
+p107
+aS'S (D 1)'
+p108
+aS'S (D 1)'
+p109
+aS'S (D 1)'
+p110
+aS'S (D 1)'
+p111
+aS'S (D 1)'
+p112
+aS'S (D 1)'
+p113
+aS'S (D 1)'
+p114
+aS'S (D 1)'
+p115
+aS'S (D 1)'
+p116
+aS'S (D 1)'
+p117
+aS'S (D 1)'
+p118
+aS'S (D 1)'
+p119
+aS'S (D 1)'
+p120
+aS'S (D 1)'
+p121
+aS'S (D 1)'
+p122
+aS'S (D 1)'
+p123
+aS'S (D 1)'
+p124
+aS'S (D 1)'
+p125
+aS'S (D 1)'
+p126
+aS'S (D 1)'
+p127
+aS'S (D 1)'
+p128
+aS'S (D 2)'
+p129
+aS'S (D 2)'
+p130
+aS'S (D 2)'
+p131
+aS'S (D 2)'
+p132
+aS'S (D 2)'
+p133
+aS'S (D 2)'
+p134
+aS'S (D 2)'
+p135
+aS'S (D 2)'
+p136
+aS'S (D 2)'
+p137
+aS'S (D 2)'
+p138
+aS'S (D 2)'
+p139
+aS'S (D 2)'
+p140
+aS'S (D 2)'
+p141
+aS'S (D 2)'
+p142
+aS'S (D 2)'
+p143
+aS'S (D 2)'
+p144
+aS'S (D 2)'
+p145
+aS'S (D 2)'
+p146
+aS'S (D 2)'
+p147
+aS'S (D 2)'
+p148
+aS'S (D 2)'
+p149
+aS'S (D 2)'
+p150
+aS'S (D 2)'
+p151
+aS'S (D 2)'
+p152
+aS'S (D 2)'
+p153
+aS'S (D 2)'
+p154
+aS'S (D 2)'
+p155
+aS'S (D 2)'
+p156
+aS'S (D 2)'
+p157
+aS'S (D 2)'
+p158
+aS'S (D 2)'
+p159
+aS'S (D 2)'
+p160
+aS'S (D 2)'
+p161
+aS'S (D 2)'
+p162
+aS'S (D 2)'
+p163
+aS'S (D 2)'
+p164
+aS'S (D 2)'
+p165
+aS'S (D 2)'
+p166
+aS'S (D 2)'
+p167
+aS'S (D 2)'
+p168
+aS'S (D 2)'
+p169
+aS'S (D 2)'
+p170
+aS'S (D 2)'
+p171
+aS'S (D 2)'
+p172
+aS'S (D 2)'
+p173
+aS'S (D 2)'
+p174
+aS'S (D 2)'
+p175
+aS'S (D 2)'
+p176
+aS'S (D 2)'
+p177
+aS'S (D 2)'
+p178
+aS'S (D 2)'
+p179
+aS'S (D 2)'
+p180
+aS'S (D 2)'
+p181
+aS'S (D 2)'
+p182
+aS'S (D 2)'
+p183
+aS'S (D 2)'
+p184
+aS'S (D 2)'
+p185
+aS'S (D 2)'
+p186
+aS'S (D 2)'
+p187
+aS'S (D 2)'
+p188
+aS'S (D 2)'
+p189
+aS'S (D 2)'
+p190
+aS'S (D 2)'
+p191
+aS'S (D 2)'
+p192
+aS'S (D 2)'
+p193
+aS'S (D 2)'
+p194
+aS'S (D 3)'
+p195
+aS'S (D 3)'
+p196
+aS'S (D 3)'
+p197
+aS'S (D 3)'
+p198
+aS'S (D 3)'
+p199
+aS'S (D 3)'
+p200
+aS'S (D 3)'
+p201
+aS'S (D 3)'
+p202
+aS'S (D 3)'
+p203
+aS'S (D 3)'
+p204
+aS'S (D 3)'
+p205
+aS'S (D 3)'
+p206
+aS'S (D 3)'
+p207
+aS'S (D 3)'
+p208
+aS'S (D 3)'
+p209
+aS'S (D 3)'
+p210
+aS'S (D 3)'
+p211
+aS'S (D 3)'
+p212
+aS'S (D 3)'
+p213
+aS'S (D 3)'
+p214
+aS'S (D 3)'
+p215
+aS'S (D 3)'
+p216
+aS'S (D 3)'
+p217
+aS'S (D 3)'
+p218
+aS'S (D 3)'
+p219
+aS'S (D 3)'
+p220
+aS'S (D 3)'
+p221
+aS'S (D 3)'
+p222
+aS'S (D 3)'
+p223
+aS'S (D 3)'
+p224
+aS'S (D 3)'
+p225
+aS'S (D 3)'
+p226
+aS'S (D 3)'
+p227
+aS'S (D 3)'
+p228
+aS'S (D 3)'
+p229
+aS'S (D 3)'
+p230
+aS'S (D 3)'
+p231
+aS'S (D 3)'
+p232
+aS'S (D 3)'
+p233
+aS'S (D 3)'
+p234
+aS'S (D 3)'
+p235
+aS'S (D 3)'
+p236
+aS'S (D 3)'
+p237
+aS'S (D 4)'
+p238
+aS'S (D 4)'
+p239
+aS'S (D 4)'
+p240
+aS'S (D 4)'
+p241
+aS'S (D 4)'
+p242
+aS'S (D 4)'
+p243
+aS'S (D 4)'
+p244
+aS'S (D 4)'
+p245
+aS'S (D 4)'
+p246
+aS'S (D 4)'
+p247
+aS'S (D 4)'
+p248
+aS'S (D 4)'
+p249
+aS'S (D 4)'
+p250
+aS'S (D 4)'
+p251
+aS'S (D 4)'
+p252
+aS'S (D 4)'
+p253
+aS'S (D 4)'
+p254
+aS'S (D 4)'
+p255
+aS'S (D 4)'
+p256
+aS'S (D 4)'
+p257
+aS'S (D 4)'
+p258
+aS'S (D 4)'
+p259
+aS'S (D 4)'
+p260
+aS'S (D 5)'
+p261
+aS'S (D 5)'
+p262
+aS'S (D 5)'
+p263
+aS'S (D 5)'
+p264
+aS'S (D 5)'
+p265
+aS'S (D 5)'
+p266
+aS'S (D 5)'
+p267
+aS'S (D 5)'
+p268
+aS'S (D 5)'
+p269
+aS'S (D 5)'
+p270
+aS'S (D 5)'
+p271
+aS'S (D 5)'
+p272
+aS'S (D 5)'
+p273
+aS'S (D 5)'
+p274
+aS'S (D 5)'
+p275
+aS'S (D 5)'
+p276
+aS'S (D 5)'
+p277
+aS'S (D 5)'
+p278
+aS'S (D 5)'
+p279
+aS'S (D 5)'
+p280
+aS'S (D 5)'
+p281
+aS'S (D 5)'
+p282
+aS'S (D 5)'
+p283
+aS'S (D 5)'
+p284
+aS'S (D 5)'
+p285
+aS'S (D 5)'
+p286
+aS'S (D 5)'
+p287
+aS'S (D 5)'
+p288
+aS'S (D 5)'
+p289
+aS'S (D 5)'
+p290
+aS'S (D 5)'
+p291
+aS'S (D 5)'
+p292
+aS'S (D 5)'
+p293
+aS'S (D 5)'
+p294
+aS'S (D 5)'
+p295
+aS'S (D 5)'
+p296
+aS'S (D 5)'
+p297
+aS'S (D 5)'
+p298
+aS'S (D 5)'
+p299
+aS'S (D 5)'
+p300
+aS'S (D 5)'
+p301
+aS'S (D 5)'
+p302
+aS'S (D 5)'
+p303
+aS'S (D 5)'
+p304
+aS'S (D 5)'
+p305
+aS'S (D 5)'
+p306
+aS'S (D* 6)'
+p307
+aS'S (D* 6)'
+p308
+aS'S (D* 6)'
+p309
+aS'S (D* 6)'
+p310
+aS'S (D* 6)'
+p311
+aS'S (D* 6)'
+p312
+aS'S (D* 6)'
+p313
+aS'S (D* 6)'
+p314
+aS'S (D* 6)'
+p315
+aS'S (D* 6)'
+p316
+aS'S (D* 6)'
+p317
+aS'S (D* 6)'
+p318
+aS'S (D* 6)'
+p319
+aS'S (D* 6)'
+p320
+aS'S (D* 6)'
+p321
+aS'S (D* 6)'
+p322
+aS'S (D* 6)'
+p323
+aS'S (D* 6)'
+p324
+aS'S (D* 6)'
+p325
+aS'S (D* 6)'
+p326
+aS'S (D* 6)'
+p327
+aS'S (D* 6)'
+p328
+aS'S (D* 6)'
+p329
+aS'S (D* 6)'
+p330
+aS'S (D* 6)'
+p331
+aS'S (D* 6)'
+p332
+aS'S (D 7)'
+p333
+aS'S (D 7)'
+p334
+aS'S (D 7)'
+p335
+aS'S (D 7)'
+p336
+aS'S (D 7)'
+p337
+aS'S (D 7)'
+p338
+aS'S (D 7)'
+p339
+aS'S (D 7)'
+p340
+aS'S (D 7)'
+p341
+aS'S (D 7)'
+p342
+aS'S (D 7)'
+p343
+aS'S (D 7)'
+p344
+aS'S (D 7)'
+p345
+aS'S (D 7)'
+p346
+aS'S (D 7)'
+p347
+aS'S (D 7)'
+p348
+aS'S (D 7)'
+p349
+aS'S (D 7)'
+p350
+aS'S (D 8)'
+p351
+aS'S (D 8)'
+p352
+aS'S (D 8)'
+p353
+aS'S (D 8)'
+p354
+aS'S (D 8)'
+p355
+aS'S (D 8)'
+p356
+aS'S (D 8)'
+p357
+aS'S (D 8)'
+p358
+aS'S (D 8)'
+p359
+aS'S (D 8)'
+p360
+aS'S (D 8)'
+p361
+aS'S (D 8)'
+p362
+aS'S (D 8)'
+p363
+aS'S (D 8)'
+p364
+aS'S (D 9)'
+p365
+aS'S (D 9)'
+p366
+aS'S (D 9)'
+p367
+aS'S (D 9)'
+p368
+aS'S (D 9)'
+p369
+aS'S (D 9)'
+p370
+aS'S (D 9)'
+p371
+aS'S (D 9)'
+p372
+aS'S (D 9)'
+p373
+aS'S (D 9)'
+p374
+aS'S (D 9)'
+p375
+aS'S (D 9)'
+p376
+aS'S (D 9)'
+p377
+aS'S (D 9)'
+p378
+aS'S (D 9)'
+p379
+aS'S (D 9)'
+p380
+aS'S (D 9)'
+p381
+aS'S (D 9)'
+p382
+aS'S (D 9)'
+p383
+aS'S (D 9)'
+p384
+aS'S (D 9)'
+p385
+aS'S (D 9)'
+p386
+aS'S (D 9)'
+p387
+aS'S (D 9)'
+p388
+aS'S (D 9)'
+p389
+aS'S (D 9)'
+p390
+aS'S (D 9)'
+p391
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p392
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p393
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p394
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p395
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p396
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p397
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p398
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p399
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p400
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p401
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p402
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p403
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p404
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p405
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p406
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p407
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p408
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p409
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p410
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p411
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p412
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p413
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p414
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p415
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p416
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p417
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p418
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p419
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p420
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p421
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p422
+aS'S (S1 (NZ 1)) (S2 (D 0))'
+p423
+aS'S (S1 (NZ 1)) (S2 (D 1))'
+p424
+aS'S (S1 (NZ 1)) (S2 (D 1))'
+p425
+aS'S (S1 (NZ 1)) (S2 (D 1))'
+p426
+aS'S (S1 (NZ 1)) (S2 (D 1))'
+p427
+aS'S (S1 (NZ 1)) (S2 (D 1))'
+p428
+aS'S (S1 (NZ 1)) (S2 (D 1))'
+p429
+aS'S (S1 (NZ 1)) (S2 (D 1))'
+p430
+aS'S (S1 (NZ 1)) (S2 (D 1))'
+p431
+aS'S (S1 (NZ 1)) (S2 (D 1))'
+p432
+aS'S (S1 (NZ 1)) (S2 (D 1))'
+p433
+aS'S (S1 (NZ 1)) (S2 (D 2))'
+p434
+aS'S (S1 (NZ 1)) (S2 (D 2))'
+p435
+aS'S (S1 (NZ 1)) (S2 (D 2))'
+p436
+aS'S (S1 (NZ 1)) (S2 (D 2))'
+p437
+aS'S (S1 (NZ 1)) (S2 (D 2))'
+p438
+aS'S (S1 (NZ 1)) (S2 (D 2))'
+p439
+aS'S (S1 (NZ 1)) (S2 (D 2))'
+p440
+aS'S (S1 (NZ 1)) (S2 (D 3))'
+p441
+aS'S (S1 (NZ 1)) (S2 (D 3))'
+p442
+aS'S (S1 (NZ 1)) (S2 (D 3))'
+p443
+aS'S (S1 (NZ 1)) (S2 (D 3))'
+p444
+aS'S (S1 (NZ 1)) (S2 (D 3))'
+p445
+aS'S (S1 (NZ 1)) (S2 (D 3))'
+p446
+aS'S (S1 (NZ 1)) (S2 (D 4))'
+p447
+aS'S (S1 (NZ 1)) (S2 (D 4))'
+p448
+aS'S (S1 (NZ 1)) (S2 (D 4))'
+p449
+aS'S (S1 (NZ 1)) (S2 (D 4))'
+p450
+aS'S (S1 (NZ 1)) (S2 (D 4))'
+p451
+aS'S (S1 (NZ 1)) (S2 (D 4))'
+p452
+aS'S (S1 (NZ 1)) (S2 (D 4))'
+p453
+aS'S (S1 (NZ 1)) (S2 (D 4))'
+p454
+aS'S (S1 (NZ 1)) (S2 (D 5))'
+p455
+aS'S (S1 (NZ 1)) (S2 (D 5))'
+p456
+aS'S (S1 (NZ 1)) (S2 (D 5))'
+p457
+aS'S (S1 (NZ 1)) (S2 (D 5))'
+p458
+aS'S (S1 (NZ 1)) (S2 (D 5))'
+p459
+aS'S (S1 (NZ 1)) (S2 (D 5))'
+p460
+aS'S (S1 (NZ 1)) (S2 (D 5))'
+p461
+aS'S (S1 (NZ 1)) (S2 (D 5))'
+p462
+aS'S (S1 (NZ 1)) (S2 (D 5))'
+p463
+aS'S (S1 (NZ 1)) (S2 (D 5))'
+p464
+aS'S (S1 (NZ 1)) (S2 (D 5))'
+p465
+aS'S (S1 (NZ 1)) (S2 (D 5))'
+p466
+aS'S (S1 (NZ 1)) (S2 (D 5))'
+p467
+aS'S (S1 (NZ 1)) (S2 (D 5))'
+p468
+aS'S (S1 (NZ 1)) (S2 (D 5))'
+p469
+aS'S (S1 (NZ 1)) (S2 (D 5))'
+p470
+aS'S (S1 (NZ 1)) (S2 (D 5))'
+p471
+aS'S (S1 (NZ 1)) (S2 (D 5))'
+p472
+aS'S (S1 (NZ 1)) (S2 (D 5))'
+p473
+aS'S (S1 (NZ 1)) (S2 (D 5))'
+p474
+aS'S (S1 (NZ 1)) (S2 (D 5))'
+p475
+aS'S (S1 (NZ 1)) (S2 (D 5))'
+p476
+aS'S (S1 (NZ 1)) (S2 (D 5))'
+p477
+aS'S (S1 (NZ 1)) (S2 (D 5))'
+p478
+aS'S (S1 (NZ 1)) (S2 (D* 6))'
+p479
+aS'S (S1 (NZ 1)) (S2 (D* 6))'
+p480
+aS'S (S1 (NZ 1)) (S2 (D* 6))'
+p481
+aS'S (S1 (NZ 1)) (S2 (D* 6))'
+p482
+aS'S (S1 (NZ 1)) (S2 (D* 6))'
+p483
+aS'S (S1 (NZ 1)) (S2 (D* 6))'
+p484
+aS'S (S1 (NZ 1)) (S2 (D 7))'
+p485
+aS'S (S1 (NZ 1)) (S2 (D 7))'
+p486
+aS'S (S1 (NZ 1)) (S2 (D 7))'
+p487
+aS'S (S1 (NZ 1)) (S2 (D 7))'
+p488
+aS'S (S1 (NZ 1)) (S2 (D 7))'
+p489
+aS'S (S1 (NZ 1)) (S2 (D 7))'
+p490
+aS'S (S1 (NZ 1)) (S2 (D 7))'
+p491
+aS'S (S1 (NZ 1)) (S2 (D 8))'
+p492
+aS'S (S1 (NZ 1)) (S2 (D 8))'
+p493
+aS'S (S1 (NZ 1)) (S2 (D 8))'
+p494
+aS'S (S1 (NZ 1)) (S2 (D 8))'
+p495
+aS'S (S1 (NZ 1)) (S2 (D 8))'
+p496
+aS'S (S1 (NZ 1)) (S2 (D 9))'
+p497
+aS'S (S1 (NZ 1)) (S2 (D 9))'
+p498
+aS'S (S1 (NZ 1)) (S2 (D 9))'
+p499
+aS'S (S1 (NZ 1)) (S2 (D 9))'
+p500
+aS'S (S1 (NZ 1)) (S2 (D 9))'
+p501
+aS'S (S1 (NZ 2)) (S2 (D 0))'
+p502
+aS'S (S1 (NZ 2)) (S2 (D 0))'
+p503
+aS'S (S1 (NZ 2)) (S2 (D 0))'
+p504
+aS'S (S1 (NZ 2)) (S2 (D 0))'
+p505
+aS'S (S1 (NZ 2)) (S2 (D 0))'
+p506
+aS'S (S1 (NZ 2)) (S2 (D 0))'
+p507
+aS'S (S1 (NZ 2)) (S2 (D 0))'
+p508
+aS'S (S1 (NZ 2)) (S2 (D 0))'
+p509
+aS'S (S1 (NZ 2)) (S2 (D 0))'
+p510
+aS'S (S1 (NZ 2)) (S2 (D 0))'
+p511
+aS'S (S1 (NZ 2)) (S2 (D 0))'
+p512
+aS'S (S1 (NZ 2)) (S2 (D 0))'
+p513
+aS'S (S1 (NZ 2)) (S2 (D 0))'
+p514
+aS'S (S1 (NZ 2)) (S2 (D 0))'
+p515
+aS'S (S1 (NZ 2)) (S2 (D 0))'
+p516
+aS'S (S1 (NZ 2)) (S2 (D 0))'
+p517
+aS'S (S1 (NZ 2)) (S2 (D 1))'
+p518
+aS'S (S1 (NZ 2)) (S2 (D 1))'
+p519
+aS'S (S1 (NZ 2)) (S2 (D 1))'
+p520
+aS'S (S1 (NZ 2)) (S2 (D 1))'
+p521
+aS'S (S1 (NZ 2)) (S2 (D 1))'
+p522
+aS'S (S1 (NZ 2)) (S2 (D 1))'
+p523
+aS'S (S1 (NZ 2)) (S2 (D 1))'
+p524
+aS'S (S1 (NZ 2)) (S2 (D 1))'
+p525
+aS'S (S1 (NZ 2)) (S2 (D 1))'
+p526
+aS'S (S1 (NZ 2)) (S2 (D 1))'
+p527
+aS'S (S1 (NZ 2)) (S2 (D 2))'
+p528
+aS'S (S1 (NZ 2)) (S2 (D 2))'
+p529
+aS'S (S1 (NZ 2)) (S2 (D 2))'
+p530
+aS'S (S1 (NZ 2)) (S2 (D 2))'
+p531
+aS'S (S1 (NZ 2)) (S2 (D 3))'
+p532
+aS'S (S1 (NZ 2)) (S2 (D 3))'
+p533
+aS'S (S1 (NZ 2)) (S2 (D 3))'
+p534
+aS'S (S1 (NZ 2)) (S2 (D 3))'
+p535
+aS'S (S1 (NZ 2)) (S2 (D 4))'
+p536
+aS'S (S1 (NZ 2)) (S2 (D 5))'
+p537
+aS'S (S1 (NZ 2)) (S2 (D 5))'
+p538
+aS'S (S1 (NZ 2)) (S2 (D 5))'
+p539
+aS'S (S1 (NZ 2)) (S2 (D 5))'
+p540
+aS'S (S1 (NZ 2)) (S2 (D 5))'
+p541
+aS'S (S1 (NZ 2)) (S2 (D 5))'
+p542
+aS'S (S1 (NZ 2)) (S2 (D 5))'
+p543
+aS'S (S1 (NZ 2)) (S2 (D 5))'
+p544
+aS'S (S1 (NZ 2)) (S2 (D 5))'
+p545
+aS'S (S1 (NZ 2)) (S2 (D 5))'
+p546
+aS'S (S1 (NZ 2)) (S2 (D 5))'
+p547
+aS'S (S1 (NZ 2)) (S2 (D 5))'
+p548
+aS'S (S1 (NZ 2)) (S2 (D 5))'
+p549
+aS'S (S1 (NZ 2)) (S2 (D* 6))'
+p550
+aS'S (S1 (NZ 2)) (S2 (D* 6))'
+p551
+aS'S (S1 (NZ 2)) (S2 (D* 6))'
+p552
+aS'S (S1 (NZ 2)) (S2 (D 7))'
+p553
+aS'S (S1 (NZ 2)) (S2 (D 8))'
+p554
+aS'S (S1 (NZ 2)) (S2 (D 8))'
+p555
+aS'S (S1 (NZ 2)) (S2 (D 8))'
+p556
+aS'S (S1 (NZ 2)) (S2 (D 8))'
+p557
+aS'S (S1 (NZ 2)) (S2 (D 9))'
+p558
+aS'S (S1 (NZ 2)) (S2 (D 9))'
+p559
+aS'S (S1 (NZ 2)) (S2 (D 9))'
+p560
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p561
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p562
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p563
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p564
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p565
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p566
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p567
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p568
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p569
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p570
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p571
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p572
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p573
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p574
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p575
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p576
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p577
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p578
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p579
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p580
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p581
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p582
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p583
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p584
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p585
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p586
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p587
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p588
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p589
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p590
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p591
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p592
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p593
+aS'S (S1 (NZ 3)) (S2 (D 0))'
+p594
+aS'S (S1 (NZ 3)) (S2 (D 1))'
+p595
+aS'S (S1 (NZ 3)) (S2 (D 1))'
+p596
+aS'S (S1 (NZ 3)) (S2 (D 1))'
+p597
+aS'S (S1 (NZ 3)) (S2 (D 1))'
+p598
+aS'S (S1 (NZ 3)) (S2 (D 1))'
+p599
+aS'S (S1 (NZ 3)) (S2 (D 1))'
+p600
+aS'S (S1 (NZ 3)) (S2 (D 1))'
+p601
+aS'S (S1 (NZ 3)) (S2 (D 1))'
+p602
+aS'S (S1 (NZ 3)) (S2 (D 1))'
+p603
+aS'S (S1 (NZ 3)) (S2 (D 1))'
+p604
+aS'S (S1 (NZ 3)) (S2 (D 1))'
+p605
+aS'S (S1 (NZ 3)) (S2 (D 1))'
+p606
+aS'S (S1 (NZ 3)) (S2 (D 2))'
+p607
+aS'S (S1 (NZ 3)) (S2 (D 2))'
+p608
+aS'S (S1 (NZ 3)) (S2 (D 2))'
+p609
+aS'S (S1 (NZ 3)) (S2 (D 3))'
+p610
+aS'S (S1 (NZ 3)) (S2 (D 3))'
+p611
+aS'S (S1 (NZ 3)) (S2 (D 3))'
+p612
+aS'S (S1 (NZ 3)) (S2 (D 4))'
+p613
+aS'S (S1 (NZ 3)) (S2 (D 4))'
+p614
+aS'S (S1 (NZ 3)) (S2 (D 5))'
+p615
+aS'S (S1 (NZ 3)) (S2 (D 5))'
+p616
+aS'S (S1 (NZ 3)) (S2 (D* 6))'
+p617
+aS'S (S1 (NZ 3)) (S2 (D* 6))'
+p618
+aS'S (S1 (NZ 3)) (S2 (D 7))'
+p619
+aS'S (S1 (NZ 3)) (S2 (D 9))'
+p620
+aS'S (S1 (NZ 4)) (S2 (D 0))'
+p621
+aS'S (S1 (NZ 4)) (S2 (D 0))'
+p622
+aS'S (S1 (NZ 4)) (S2 (D 0))'
+p623
+aS'S (S1 (NZ 4)) (S2 (D 0))'
+p624
+aS'S (S1 (NZ 4)) (S2 (D 0))'
+p625
+aS'S (S1 (NZ 4)) (S2 (D 0))'
+p626
+aS'S (S1 (NZ 4)) (S2 (D 2))'
+p627
+aS'S (S1 (NZ 4)) (S2 (D 2))'
+p628
+aS'S (S1 (NZ 4)) (S2 (D 2))'
+p629
+aS'S (S1 (NZ 4)) (S2 (D 3))'
+p630
+aS'S (S1 (NZ 4)) (S2 (D 3))'
+p631
+aS'S (S1 (NZ 4)) (S2 (D 4))'
+p632
+aS'S (S1 (NZ 4)) (S2 (D 4))'
+p633
+aS'S (S1 (NZ 4)) (S2 (D 4))'
+p634
+aS'S (S1 (NZ 4)) (S2 (D 4))'
+p635
+aS'S (S1 (NZ 4)) (S2 (D 4))'
+p636
+aS'S (S1 (NZ 4)) (S2 (D 4))'
+p637
+aS'S (S1 (NZ 4)) (S2 (D 4))'
+p638
+aS'S (S1 (NZ 4)) (S2 (D 4))'
+p639
+aS'S (S1 (NZ 4)) (S2 (D 5))'
+p640
+aS'S (S1 (NZ 4)) (S2 (D 5))'
+p641
+aS'S (S1 (NZ 4)) (S2 (D* 6))'
+p642
+aS'S (S1 (NZ 4)) (S2 (D* 6))'
+p643
+aS'S (S1 (NZ 4)) (S2 (D* 6))'
+p644
+aS'S (S1 (NZ 4)) (S2 (D* 6))'
+p645
+aS'S (S1 (NZ 4)) (S2 (D* 6))'
+p646
+aS'S (S1 (NZ 4)) (S2 (D* 6))'
+p647
+aS'S (S1 (NZ 4)) (S2 (D 8))'
+p648
+aS'S (S1 (NZ 4)) (S2 (D 8))'
+p649
+aS'S (S1 (NZ 4)) (S2 (D 8))'
+p650
+aS'S (S1 (NZ 5)) (S2 (D 0))'
+p651
+aS'S (S1 (NZ 5)) (S2 (D 0))'
+p652
+aS'S (S1 (NZ 5)) (S2 (D 0))'
+p653
+aS'S (S1 (NZ 5)) (S2 (D 0))'
+p654
+aS'S (S1 (NZ 5)) (S2 (D 0))'
+p655
+aS'S (S1 (NZ 5)) (S2 (D 0))'
+p656
+aS'S (S1 (NZ 5)) (S2 (D 0))'
+p657
+aS'S (S1 (NZ 5)) (S2 (D 0))'
+p658
+aS'S (S1 (NZ 5)) (S2 (D 0))'
+p659
+aS'S (S1 (NZ 5)) (S2 (D 0))'
+p660
+aS'S (S1 (NZ 5)) (S2 (D 0))'
+p661
+aS'S (S1 (NZ 5)) (S2 (D 0))'
+p662
+aS'S (S1 (NZ 5)) (S2 (D 0))'
+p663
+aS'S (S1 (NZ 5)) (S2 (D 0))'
+p664
+aS'S (S1 (NZ 5)) (S2 (D 0))'
+p665
+aS'S (S1 (NZ 5)) (S2 (D 1))'
+p666
+aS'S (S1 (NZ 5)) (S2 (D 1))'
+p667
+aS'S (S1 (NZ 5)) (S2 (D 1))'
+p668
+aS'S (S1 (NZ 5)) (S2 (D 2))'
+p669
+aS'S (S1 (NZ 5)) (S2 (D 2))'
+p670
+aS'S (S1 (NZ 5)) (S2 (D 2))'
+p671
+aS'S (S1 (NZ 5)) (S2 (D 4))'
+p672
+aS'S (S1 (NZ 5)) (S2 (D 4))'
+p673
+aS'S (S1 (NZ 5)) (S2 (D 4))'
+p674
+aS'S (S1 (NZ 5)) (S2 (D 4))'
+p675
+aS'S (S1 (NZ 5)) (S2 (D 5))'
+p676
+aS'S (S1 (NZ 5)) (S2 (D 5))'
+p677
+aS'S (S1 (NZ 5)) (S2 (D 5))'
+p678
+aS'S (S1 (NZ 5)) (S2 (D* 6))'
+p679
+aS'S (S1 (NZ 5)) (S2 (D 8))'
+p680
+aS'S (S1 (NZ 5)) (S2 (D 9))'
+p681
+aS'S (S1 (NZ 6)) (S2 (D 0))'
+p682
+aS'S (S1 (NZ 6)) (S2 (D 0))'
+p683
+aS'S (S1 (NZ 6)) (S2 (D 0))'
+p684
+aS'S (S1 (NZ 6)) (S2 (D 0))'
+p685
+aS'S (S1 (NZ 6)) (S2 (D 0))'
+p686
+aS'S (S1 (NZ 6)) (S2 (D 0))'
+p687
+aS'S (S1 (NZ 6)) (S2 (D 0))'
+p688
+aS'S (S1 (NZ 6)) (S2 (D 0))'
+p689
+aS'S (S1 (NZ 6)) (S2 (D 0))'
+p690
+aS'S (S1 (NZ 6)) (S2 (D 0))'
+p691
+aS'S (S1 (NZ 6)) (S2 (D 0))'
+p692
+aS'S (S1 (NZ 6)) (S2 (D 0))'
+p693
+aS'S (S1 (NZ 6)) (S2 (D 1))'
+p694
+aS'S (S1 (NZ 6)) (S2 (D 1))'
+p695
+aS'S (S1 (NZ 6)) (S2 (D 1))'
+p696
+aS'S (S1 (NZ 6)) (S2 (D 2))'
+p697
+aS'S (S1 (NZ 6)) (S2 (D 2))'
+p698
+aS'S (S1 (NZ 6)) (S2 (D 5))'
+p699
+aS'S (S1 (NZ 6)) (S2 (D 5))'
+p700
+aS'S (S1 (NZ 6)) (S2 (D 5))'
+p701
+aS'S (S1 (NZ 6)) (S2 (D 5))'
+p702
+aS'S (S1 (NZ 6)) (S2 (D 5))'
+p703
+aS'S (S1 (NZ 6)) (S2 (D* 6))'
+p704
+aS'S (S1 (NZ 6)) (S2 (D 7))'
+p705
+aS'S (S1 (NZ 6)) (S2 (D 9))'
+p706
+aS'S (S1 (NZ 6)) (S2 (D 9))'
+p707
+aS'S (S1 (NZ 6)) (S2 (D 9))'
+p708
+aS'S (S1 (NZ 6)) (S2 (D 9))'
+p709
+aS'S (S1 (NZ 7)) (S2 (D 0))'
+p710
+aS'S (S1 (NZ 7)) (S2 (D 0))'
+p711
+aS'S (S1 (NZ 7)) (S2 (D 0))'
+p712
+aS'S (S1 (NZ 7)) (S2 (D 2))'
+p713
+aS'S (S1 (NZ 7)) (S2 (D 2))'
+p714
+aS'S (S1 (NZ 7)) (S2 (D 3))'
+p715
+aS'S (S1 (NZ 7)) (S2 (D 5))'
+p716
+aS'S (S1 (NZ 7)) (S2 (D 5))'
+p717
+aS'S (S1 (NZ 7)) (S2 (D 5))'
+p718
+aS'S (S1 (NZ 7)) (S2 (D* 6))'
+p719
+aS'S (S1 (NZ 7)) (S2 (D* 6))'
+p720
+aS'S (S1 (NZ 7)) (S2 (D 7))'
+p721
+aS'S (S1 (NZ 7)) (S2 (D 8))'
+p722
+aS'S (S1 (NZ 7)) (S2 (D 9))'
+p723
+aS'S (S1 (NZ 8)) (S2 (D 0))'
+p724
+aS'S (S1 (NZ 8)) (S2 (D 0))'
+p725
+aS'S (S1 (NZ 8)) (S2 (D 0))'
+p726
+aS'S (S1 (NZ 8)) (S2 (D 3))'
+p727
+aS'S (S1 (NZ 8)) (S2 (D 5))'
+p728
+aS'S (S1 (NZ 8)) (S2 (D 5))'
+p729
+aS'S (S1 (NZ 8)) (S2 (D 5))'
+p730
+aS'S (S1 (NZ 8)) (S2 (D* 6))'
+p731
+aS'S (S1 (NZ 8)) (S2 (D 7))'
+p732
+aS'S (S1 (NZ 8)) (S2 (D 7))'
+p733
+aS'S (S1 (NZ 8)) (S2 (D 8))'
+p734
+aS'S (S1 (NZ 8)) (S2 (D 8))'
+p735
+aS'S (S1 (NZ 8)) (S2 (D 9))'
+p736
+aS'S (S1 (NZ 8)) (S2 (D 9))'
+p737
+aS'S (S1 (NZ 9)) (S2 (D 0))'
+p738
+aS'S (S1 (NZ 9)) (S2 (D 0))'
+p739
+aS'S (S1 (NZ 9)) (S2 (D 0))'
+p740
+aS'S (S1 (NZ 9)) (S2 (D 1))'
+p741
+aS'S (S1 (NZ 9)) (S2 (D 2))'
+p742
+aS'S (S1 (NZ 9)) (S2 (D 2))'
+p743
+aS'S (S1 (NZ 9)) (S2 (D 3))'
+p744
+aS'S (S1 (NZ 9)) (S2 (D 5))'
+p745
+aS'S (S1 (NZ 9)) (S2 (D 5))'
+p746
+aS'S (S1 (NZ 9)) (S2 (D 5))'
+p747
+aS'S (S1 (NZ 9)) (S2 (D 7))'
+p748
+aS'S (S1 (NZ 9)) (S2 (D 8))'
+p749
+aS'S (S1 (NZ 9)) (S2 (D 9))'
+p750
+aS'S (S1 (NZ 1)) (S2 (D 0) (D 0))'
+p751
+aS'S (S1 (NZ 1)) (S2 (D 0) (D 0))'
+p752
+aS'S (S1 (NZ 1)) (S2 (D 0) (D 0))'
+p753
+aS'S (S1 (NZ 1)) (S2 (D 0) (D 0))'
+p754
+aS'S (S1 (NZ 1)) (S2 (D 0) (D 0))'
+p755
+aS'S (S1 (NZ 1)) (S2 (D 0) (D 0))'
+p756
+aS'S (S1 (NZ 1)) (S2 (D 0) (D 0))'
+p757
+aS'S (S1 (NZ 1)) (S2 (D 0) (D 0))'
+p758
+aS'S (S1 (NZ 1)) (S2 (D 0) (D 0))'
+p759
+aS'S (S1 (NZ 1)) (S2 (D 0) (D 0))'
+p760
+aS'S (S1 (NZ 1)) (S2 (D 0) (D 0))'
+p761
+aS'S (S1 (NZ 1)) (S2 (D 0) (D 0))'
+p762
+aS'S (S1 (NZ 1)) (S2 (D 0) (D 0))'
+p763
+aS'S (S1 (NZ 1)) (S2 (D 0) (D 0))'
+p764
+aS'S (S1 (NZ 1)) (S2 (D 0) (D 0))'
+p765
+aS'S (S1 (NZ 1)) (S2 (D 0) (D 0))'
+p766
+aS'S (S1 (NZ 1)) (S2 (D 0) (D 2))'
+p767
+aS'S (S1 (NZ 1)) (S2 (D 0) (D* 6))'
+p768
+aS'S (S1 (NZ 1)) (S2 (D 1) (D 5))'
+p769
+aS'S (S1 (NZ 1)) (S2 (D 2) (D 0))'
+p770
+aS'S (S1 (NZ 1)) (S2 (D 3) (D 0))'
+p771
+aS'S (S1 (NZ 1)) (S2 (D 3) (D 0))'
+p772
+aS'S (S1 (NZ 1)) (S2 (D 3) (D 0))'
+p773
+aS'S (S1 (NZ 1)) (S2 (D 4) (D 0))'
+p774
+aS'S (S1 (NZ 1)) (S2 (D 4) (D 0))'
+p775
+aS'S (S1 (NZ 1)) (S2 (D 5) (D 0))'
+p776
+aS'S (S1 (NZ 1)) (S2 (D 5) (D 4))'
+p777
+aS'S (S1 (NZ 1)) (S2 (D 5) (D* 6))'
+p778
+aS'S (S1 (NZ 1)) (S2 (D* 6) (D 0))'
+p779
+aS'S (S1 (NZ 1)) (S2 (D 7) (D 0))'
+p780
+aS'S (S1 (NZ 1)) (S2 (D 7) (D 0))'
+p781
+aS'S (S1 (NZ 2)) (S2 (D 1) (D* 6))'
+p782
+aS'S (S1 (NZ 2)) (S2 (D 1) (D 7))'
+p783
+aS'S (S1 (NZ 2)) (S2 (D 2) (D 5))'
+p784
+aS'S (S1 (NZ 2)) (S2 (D 5) (D 0))'
+p785
+aS'S (S1 (NZ 2)) (S2 (D 5) (D 0))'
+p786
+aS'S (S1 (NZ 2)) (S2 (D 5) (D 0))'
+p787
+aS'S (S1 (NZ 2)) (S2 (D 5) (D 0))'
+p788
+aS'S (S1 (NZ 2)) (S2 (D 5) (D 0))'
+p789
+aS'S (S1 (NZ 2)) (S2 (D 5) (D 3))'
+p790
+aS'S (S1 (NZ 2)) (S2 (D 8) (D 0))'
+p791
+aS'S (S1 (NZ 3)) (S2 (D 0) (D 3))'
+p792
+aS'S (S1 (NZ 3)) (S2 (D 2) (D 1))'
+p793
+aS'S (S1 (NZ 3)) (S2 (D 3) (D 8))'
+p794
+aS'S (S1 (NZ 3)) (S2 (D 4) (D 0))'
+p795
+aS'S (S1 (NZ 3)) (S2 (D 5) (D 0))'
+p796
+aS'S (S1 (NZ 3)) (S2 (D 9) (D 0))'
+p797
+aS'S (S1 (NZ 3)) (S2 (D 9) (D 2))'
+p798
+aS'S (S1 (NZ 4)) (S2 (D 5) (D 5))'
+p799
+aS'S (S1 (NZ 5)) (S2 (D 0) (D 0))'
+p800
+aS'S (S1 (NZ 5)) (S2 (D 0) (D 0))'
+p801
+aS'S (S1 (NZ 5)) (S2 (D 0) (D 0))'
+p802
+aS'S (S1 (NZ 5)) (S2 (D 0) (D 4))'
+p803
+aS'S (S1 (NZ 6)) (S2 (D 1) (D 4))'
+p804
+aS'S (S1 (NZ 6)) (S2 (D 4) (D 0))'
+p805
+aS'S (S1 (NZ 7)) (S2 (D 0) (D 8))'
+p806
+aS'S (S1 (NZ 7)) (S2 (D 3) (D 5))'
+p807
+aS'S (S1 (NZ 7)) (S2 (D 7) (D 8))'
+p808
+aS'S (S1 (NZ 8)) (S2 (D 0) (D 0))'
+p809
+aS'S (S1 (NZ 8)) (S2 (D 5) (D 0))'
+p810
+aS'S (S1 (NZ 8)) (S2 (D 8) (D 0))'
+p811
+aS'S (S1 (NZ 9)) (S2 (D 1) (D 1))'
+p812
+aS'S (S1 (S1 (NZ 1)) (S2 (D 0))) (S2 (D 0) (D 0))'
+p813
+aS'S (S1 (S1 (NZ 1)) (S2 (D 0))) (S2 (D 0) (D 0))'
+p814
+aS'S (S1 (S1 (NZ 1)) (S2 (D 0))) (S2 (D 0) (D 0))'
+p815
+aS'S (S1 (S1 (NZ 1)) (S2 (D 0))) (S2 (D 0) (D 0))'
+p816
+aS'S (S1 (S1 (NZ 1)) (S2 (D 0))) (S2 (D 0) (D 0))'
+p817
+aS'S (S1 (S1 (NZ 1)) (S2 (D 0))) (S2 (D 0) (D 0))'
+p818
+aS'S (S1 (S1 (NZ 1)) (S2 (D 0))) (S2 (D 0) (D 0))'
+p819
+aS'S (S1 (S1 (NZ 1)) (S2 (D 5))) (S2 (D 0) (D 0))'
+p820
+aS'S (S1 (S1 (NZ 1)) (S2 (D 5))) (S2 (D 0) (D 0))'
+p821
+aS'S (S1 (S1 (NZ 1)) (S2 (D 7))) (S2 (D 3) (D 5))'
+p822
+aS'S (S1 (S1 (NZ 1)) (S2 (D 8))) (S2 (D 5) (D 0))'
+p823
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 0) (D 0))'
+p824
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 0) (D* 6))'
+p825
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 0) (D* 6))'
+p826
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 0) (D* 6))'
+p827
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 2) (D 5))'
+p828
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 2) (D 9))'
+p829
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 3) (D 0))'
+p830
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 4) (D 7))'
+p831
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 5) (D 2))'
+p832
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 5) (D 2))'
+p833
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D* 6) (D 0))'
+p834
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D* 6) (D 4))'
+p835
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D* 6) (D* 6))'
+p836
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D* 6) (D 7))'
+p837
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D* 6) (D 9))'
+p838
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 7) (D 2))'
+p839
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 7) (D 3))'
+p840
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 7) (D 3))'
+p841
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 7) (D 4))'
+p842
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 7) (D 4))'
+p843
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 7) (D 4))'
+p844
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 7) (D 4))'
+p845
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 7) (D* 6))'
+p846
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 7) (D* 6))'
+p847
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 7) (D 8))'
+p848
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 7) (D 9))'
+p849
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 7) (D 9))'
+p850
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 0))'
+p851
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 0))'
+p852
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 0))'
+p853
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 0))'
+p854
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 1))'
+p855
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 1))'
+p856
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 1))'
+p857
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 1))'
+p858
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 2))'
+p859
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 2))'
+p860
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 2))'
+p861
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 2))'
+p862
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 3))'
+p863
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 4))'
+p864
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 4))'
+p865
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 4))'
+p866
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 4))'
+p867
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 4))'
+p868
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 4))'
+p869
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 5))'
+p870
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 5))'
+p871
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 5))'
+p872
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 5))'
+p873
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 5))'
+p874
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D* 6))'
+p875
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D* 6))'
+p876
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D* 6))'
+p877
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D* 6))'
+p878
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D* 6))'
+p879
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D* 6))'
+p880
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D* 6))'
+p881
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D* 6))'
+p882
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 7))'
+p883
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 7))'
+p884
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 7))'
+p885
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 7))'
+p886
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 7))'
+p887
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 7))'
+p888
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 7))'
+p889
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 7))'
+p890
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 7))'
+p891
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 7))'
+p892
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 7))'
+p893
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 7))'
+p894
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 7))'
+p895
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 7))'
+p896
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 7))'
+p897
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 7))'
+p898
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p899
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p900
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p901
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p902
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p903
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p904
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p905
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p906
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p907
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p908
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p909
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p910
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p911
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p912
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p913
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p914
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p915
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p916
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p917
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p918
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p919
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p920
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p921
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p922
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p923
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p924
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p925
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p926
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p927
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p928
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p929
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p930
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p931
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8) (D 8))'
+p932
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2* (D 8) (D 9))'
+p933
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2* (D 8) (D 9))'
+p934
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2* (D 8) (D 9))'
+p935
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2* (D 8) (D 9))'
+p936
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2* (D 8) (D 9))'
+p937
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2* (D 8) (D 9))'
+p938
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2* (D 8) (D 9))'
+p939
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2* (D 8) (D 9))'
+p940
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2* (D 8) (D 9))'
+p941
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2* (D 8) (D 9))'
+p942
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2* (D 8) (D 9))'
+p943
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2* (D 8) (D 9))'
+p944
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2* (D 8) (D 9))'
+p945
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2* (D 8) (D 9))'
+p946
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2* (D 8) (D 9))'
+p947
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2* (D 8) (D 9))'
+p948
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2* (D 8) (D 9))'
+p949
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2* (D 8) (D 9))'
+p950
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2* (D 8) (D 9))'
+p951
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2* (D 8) (D 9))'
+p952
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2* (D 8) (D 9))'
+p953
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2* (D 8) (D 9))'
+p954
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2* (D 8) (D 9))'
+p955
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2* (D 8) (D 9))'
+p956
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 0))'
+p957
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 0))'
+p958
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 0))'
+p959
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 0))'
+p960
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 0))'
+p961
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 0))'
+p962
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 0))'
+p963
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 0))'
+p964
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 0))'
+p965
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 0))'
+p966
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 0))'
+p967
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 0))'
+p968
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 0))'
+p969
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 1))'
+p970
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 1))'
+p971
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 1))'
+p972
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 1))'
+p973
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 1))'
+p974
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 2))'
+p975
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 2))'
+p976
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 2))'
+p977
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 2))'
+p978
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 2))'
+p979
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 2))'
+p980
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 3))'
+p981
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 3))'
+p982
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 3))'
+p983
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 4))'
+p984
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 5))'
+p985
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D* 6))'
+p986
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 7))'
+p987
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 9))'
+p988
+aS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9) (D 9))'
+p989
+aS'S (S1 (S1 (NZ 2)) (S2 (D 0))) (S2 (D 0) (D 0))'
+p990
+aS'S (S1 (S1 (NZ 2)) (S2 (D 0))) (S2 (D 0) (D 0))'
+p991
+aS'S (S1 (S1 (NZ 2)) (S2 (D 0))) (S2 (D 0) (D 0))'
+p992
+aS'S (S1 (S1 (NZ 2)) (S2 (D 0))) (S2 (D 0) (D 0))'
+p993
+aS'S (S1 (S1 (NZ 2)) (S2 (D 0))) (S2 (D 0) (D* 6))'
+p994
+aS'S (S1 (S1 (NZ 2)) (S2 (D 0))) (S2 (D 0) (D 8))'
+p995
+aS'S (S1 (S1 (NZ 2)) (S2 (D 0))) (S2 (D 0) (D 9))'
+p996
+aS'S (S1 (S1 (NZ 2)) (S2 (D 0))) (S2 (D 1) (D 8))'
+p997
+aS'S (S1 (S1 (NZ 2)) (S2 (D 0))) (S2 (D 1) (D 8))'
+p998
+aS'S (S1 (S1 (NZ 2)) (S2 (D 0))) (S2 (D 2) (D 3))'
+p999
+aS'S (S1 (S1 (NZ 2)) (S2 (D 0))) (S2 (D 4) (D* 6))'
+p1000
+aS'S (S1 (S1 (NZ 2)) (S2 (D* 6))) (S2 (D* 6) (D 0))'
+p1001
+aS'S (S1 (S1 (NZ 3)) (S2 (D 2))) (S2 (D 0) (D 0))'
+p1002
+aa(dp1003
+S'(S2'
+p1004
+I24
+sS'S'
+I1000
+sS'(D'
+p1005
+I76
+sa(dp1006
+g485
+I7
+sg365
+I27
+sg699
+I5
+sg620
+I1
+sg812
+I1
+sg808
+I1
+sg554
+I4
+sg424
+I10
+sg793
+I1
+sg666
+I3
+sg3
+I126
+sg999
+I1
+sg492
+I5
+sS'S (S1 (NZ 2)) (S2 (D 1)  (D) )'
+p1007
+I1
+sg774
+I2
+sg621
+I6
+sg441
+I6
+sg676
+I3
+sS'S (S1 (NZ 1)) (S2  (D) )'
+p1008
+I6
+sg669
+I3
+sg970
+I5
+sg351
+I14
+sg536
+I1
+sg553
+I1
+sg859
+I4
+sg790
+I1
+sg996
+I1
+sg975
+I6
+sg502
+I16
+sg648
+I3
+sg728
+I3
+sg627
+I3
+sS'S (S1 (NZ 2)) (S2  (D) )'
+p1009
+I3
+sg870
+I5
+sg899
+I34
+sg990
+I4
+sg640
+I2
+sg741
+I1
+sg792
+I1
+sg532
+I4
+sS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2  (D)  (D 9))'
+p1010
+I1
+sg769
+I1
+sg613
+I2
+sS'S (S1 (NZ 4)) (S2  (D) )'
+p1011
+I6
+sg985
+I1
+sg855
+I4
+sg822
+I1
+sg748
+I1
+sg697
+I2
+sg710
+I3
+sg750
+I1
+sg795
+I1
+sS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 7)  (D) )'
+p1012
+I2
+sg610
+I3
+sg804
+I1
+sg734
+I2
+sg195
+I43
+sg780
+I2
+sS'S (S1 (NZ 7)) (S2  (D) )'
+p1013
+I2
+sg799
+I1
+sg751
+I16
+sS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2  (D)  (D 0))'
+p1014
+I1
+sg997
+I2
+sg434
+I7
+sg682
+I12
+sg732
+I2
+sS'(S2 (D 8) (D 9))'
+p1015
+I24
+sg680
+I1
+sg455
+I24
+sg723
+I1
+sg619
+I1
+sS'S  (D)'
+p1016
+I26
+sg800
+I3
+sg716
+I3
+sg715
+I1
+sg820
+I2
+sg561
+I34
+sg129
+I66
+sS'S (S1 (NZ 8)) (S2  (D) )'
+p1017
+I1
+sg651
+I15
+sg796
+I1
+sg830
+I1
+sg736
+I2
+sS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2  (D)   (D) )'
+p1018
+I1
+sg803
+I1
+sg672
+I4
+sg770
+I1
+sg785
+I5
+sg832
+I2
+sg558
+I3
+sg724
+I3
+sg829
+I1
+sg811
+I1
+sg497
+I5
+sg823
+I1
+sg632
+I8
+sg840
+I2
+sg842
+I4
+sS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 0)  (D) )'
+p1019
+I3
+sS'S (S1 (NZ 3)) (S2  (D) )'
+p1020
+I2
+sg705
+I1
+sg261
+I46
+sg727
+I1
+sg828
+I1
+sS'(D 6)'
+p1021
+I76
+sS'S (S1 (NZ 1)) (S2 (D 5)  (D) )'
+p1022
+I1
+sg995
+I1
+sg797
+I1
+sg1002
+I1
+sg706
+I4
+sS'S (S1 (NZ 1)) (S2  (D)  (D 0))'
+p1023
+I1
+sg518
+I10
+sg864
+I6
+sg863
+I1
+sg771
+I3
+sg824
+I1
+sg537
+I13
+sg783
+I1
+sg777
+I1
+sS'S (S1 (NZ 1)) (S2 (D 0)  (D) )'
+p1024
+I1
+sg987
+I1
+sg981
+I3
+sg883
+I16
+sg791
+I1
+sS'S (S1 (S1 (NZ 1)) (S2 (D 9)))  (S2)'
+p1025
+I24
+sg809
+I1
+sg957
+I13
+sg630
+I2
+sg238
+I23
+sS'S (S1 (S1 (NZ 2)) (S2 (D 0))) (S2 (D 0)  (D) )'
+p1026
+I1
+sg806
+I1
+sg988
+I2
+sg528
+I4
+sg721
+I1
+sg738
+I3
+sg615
+I2
+sg742
+I2
+sg807
+I1
+sg851
+I4
+sg984
+I1
+sg749
+I1
+sS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 9)  (D) )'
+p1027
+I1
+sg831
+I1
+sg595
+I12
+sS'S (S1 (NZ 5)) (S2  (D) )'
+p1028
+I1
+sg333
+I18
+sg805
+I1
+sS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2  (D)  (D 4))'
+p1029
+I1
+sg607
+I3
+sg839
+I1
+sS'S (S1 (NZ 6)) (S2  (D) )'
+p1030
+I1
+sS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2  (D)  (D 7))'
+p1031
+I1
+sg447
+I8
+sg784
+I1
+sg813
+I7
+sg798
+I1
+sg392
+I32
+sg681
+I1
+sg694
+I3
+sS'S (S1 (S1 (NZ 2)) (S2 (D 0))) (S2 (D 4)  (D) )'
+p1032
+I1
+sg767
+I1
+sg794
+I1
+sg810
+I1
+sg722
+I1
+sS'S (S1 (S1 (NZ 1)) (S2 (D 9))) (S2 (D 8)  (D) )'
+p1033
+I8
+sg849
+I2
+sS'S (S1 (S1 (NZ 2)) (S2  (D) )) (S2  (D)  (D 0))'
+p1034
+I1
+sg744
+I1
+sg745
+I3
+sg776
+I1
+sg848
+I1
+sg713
+I2
+saS'[S] ||| 1 7 ||| 1 7 ||| LogProb=-4.96184512993\n[S] ||| 9 ||| 9 ||| LogProb=-3.61191841298\n[S] ||| 6 5 ||| 6 5 ||| LogProb=-5.29831736655\n[S] ||| 3 9 ||| 3 9 ||| LogProb=-6.90775527898\n[S] ||| 9 1 1 ||| 9 1 1 ||| LogProb=-6.90775527898\n[S] ||| 7 7 8 ||| 7 7 8 ||| LogProb=-6.90775527898\n[S] ||| 2 8 ||| 2 8 ||| LogProb=-5.52146091786\n[S] ||| 1 1 ||| 1 1 ||| LogProb=-4.60517018599\n[S] ||| 3 2 1 ||| 3 2 1 ||| LogProb=-6.90775527898\n[S] ||| 5 1 ||| 5 1 ||| LogProb=-5.80914299031\n[S] ||| 1 ||| 1 ||| LogProb=-2.07147337203\n[S] ||| 2 0 2 3 ||| 2 0 2 3 ||| LogProb=-6.90775527898\n[S] ||| 1 8 ||| 1 8 ||| LogProb=-5.29831736655\n[S] ||| 2 1 [D,1] ||| 2 1 [D,1] ||| LogProb=-6.90775527898\n[S] ||| 1 4 0 ||| 1 4 0 ||| LogProb=-6.21460809842\n[S] ||| 4 0 ||| 4 0 ||| LogProb=-5.11599580975\n[S] ||| 1 3 ||| 1 3 ||| LogProb=-5.11599580975\n[S] ||| 5 5 ||| 5 5 ||| LogProb=-5.80914299031\n[S] ||| 1 [D,1] ||| 1 [D,1] ||| LogProb=-5.11599580975\n[S] ||| 5 2 ||| 5 2 ||| LogProb=-5.80914299031\n[S] ||| 1 9 9 1 ||| 1 9 9 1 ||| LogProb=-5.29831736655\n[S] ||| 8 ||| 8 ||| LogProb=-4.26869794937\n[S] ||| 2 4 ||| 2 4 ||| LogProb=-6.90775527898\n[S] ||| 2 7 ||| 2 7 ||| LogProb=-6.90775527898\n[S] ||| 1 9 8 2 ||| 1 9 8 2 ||| LogProb=-5.52146091786\n[S] ||| 2 5 3 ||| 2 5 3 ||| LogProb=-6.90775527898\n[S] ||| 2 0 0 9 ||| 2 0 0 9 ||| LogProb=-6.90775527898\n[S] ||| 1 9 9 2 ||| 1 9 9 2 ||| LogProb=-5.11599580975\n[S] ||| 2 0 ||| 2 0 ||| LogProb=-4.13516655674\n[S] ||| 4 8 ||| 4 8 ||| LogProb=-5.80914299031\n[S] ||| 8 5 ||| 8 5 ||| LogProb=-5.80914299031\n[S] ||| 4 2 ||| 4 2 ||| LogProb=-5.80914299031\n[S] ||| 2 [D,1] ||| 2 [D,1] ||| LogProb=-5.80914299031\n[S] ||| 1 9 8 5 ||| 1 9 8 5 ||| LogProb=-5.29831736655\n[S] ||| 1 9 8 8 ||| 1 9 8 8 ||| LogProb=-3.38139475437\n[S] ||| 2 0 0 0 ||| 2 0 0 0 ||| LogProb=-5.52146091786\n[S] ||| 4 5 ||| 4 5 ||| LogProb=-6.21460809842\n[S] ||| 9 1 ||| 9 1 ||| LogProb=-6.90775527898\n[S] ||| 3 0 3 ||| 3 0 3 ||| LogProb=-6.90775527898\n[S] ||| 2 3 ||| 2 3 ||| LogProb=-5.52146091786\n[S] ||| 1 9 [D,1] 9 ||| 1 9 [D,1] 9 ||| LogProb=-6.90775527898\n[S] ||| 1 1 5 ||| 1 1 5 ||| LogProb=-6.90775527898\n[S] ||| 3 4 ||| 3 4 ||| LogProb=-6.21460809842\n[S] ||| 4 [D,1] ||| 4 [D,1] ||| LogProb=-5.11599580975\n[S] ||| 1 9 9 5 ||| 1 9 9 5 ||| LogProb=-6.90775527898\n[S] ||| 1 9 8 1 ||| 1 9 8 1 ||| LogProb=-5.52146091786\n[S] ||| 1 7 3 5 ||| 1 7 3 5 ||| LogProb=-6.90775527898\n[S] ||| 9 7 ||| 9 7 ||| LogProb=-6.90775527898\n[S] ||| 6 2 ||| 6 2 ||| LogProb=-6.21460809842\n[S] ||| 7 0 ||| 7 0 ||| LogProb=-5.80914299031\n[S] ||| 9 9 ||| 9 9 ||| LogProb=-6.90775527898\n[S] ||| 3 4 0 ||| 3 4 0 ||| LogProb=-6.90775527898\n[S] ||| 1 9 7 [D,1] ||| 1 9 7 [D,1] ||| LogProb=-6.21460809842\n[S] ||| 3 3 ||| 3 3 ||| LogProb=-5.80914299031\n[S] ||| 6 1 4 ||| 6 1 4 ||| LogProb=-6.90775527898\n[S] ||| 8 8 ||| 8 8 ||| LogProb=-6.21460809842\n[S] ||| 3 ||| 3 ||| LogProb=-3.14655516329\n[S] ||| 1 7 0 ||| 1 7 0 ||| LogProb=-6.21460809842\n[S] ||| 7 [D,1] ||| 7 [D,1] ||| LogProb=-6.21460809842\n[S] ||| 4 5 5 ||| 4 5 5 ||| LogProb=-6.90775527898\n[S] ||| 1 0 0 ||| 1 0 0 ||| LogProb=-4.13516655674\n[S] ||| 1 9 [D,1] 0 ||| 1 9 [D,1] 0 ||| LogProb=-6.90775527898\n[S] ||| 2 0 1 8 ||| 2 0 1 8 ||| LogProb=-6.21460809842\n[S] ||| 1 2 ||| 1 2 ||| LogProb=-4.96184512993\n[S] ||| 6 0 ||| 6 0 ||| LogProb=-4.42284862919\n[S] ||| 8 7 ||| 8 7 ||| LogProb=-6.21460809842\n[S2] ||| 8 9 ||| 8 9 ||| LogProb=0.0\n[S] ||| 5 8 ||| 5 8 ||| LogProb=-6.90775527898\n[S] ||| 1 5 ||| 1 5 ||| LogProb=-3.72970144863\n[S] ||| 7 9 ||| 7 9 ||| LogProb=-6.90775527898\n[S] ||| 3 7 ||| 3 7 ||| LogProb=-6.90775527898\n[S] ||| [D,1] ||| [D,1] ||| LogProb=-3.64965874096\n[S] ||| 5 0 0 ||| 5 0 0 ||| LogProb=-5.80914299031\n[S] ||| 7 5 ||| 7 5 ||| LogProb=-5.80914299031\n[S] ||| 7 3 ||| 7 3 ||| LogProb=-6.90775527898\n[S] ||| 1 5 0 0 ||| 1 5 0 0 ||| LogProb=-6.21460809842\n[S] ||| 3 0 ||| 3 0 ||| LogProb=-3.38139475437\n[S] ||| 2 ||| 2 ||| LogProb=-2.71810053696\n[S] ||| 8 [D,1] ||| 8 [D,1] ||| LogProb=-6.90775527898\n[S] ||| 5 0 ||| 5 0 ||| LogProb=-4.19970507788\n[S] ||| 3 5 0 ||| 3 5 0 ||| LogProb=-6.90775527898\n[S] ||| 1 9 3 0 ||| 1 9 3 0 ||| LogProb=-6.90775527898\n[S] ||| 8 9 ||| 8 9 ||| LogProb=-6.21460809842\n[S] ||| 1 9 [D,1] [D,2] ||| 1 9 [D,1] [D,2] ||| LogProb=-6.90775527898\n[S] ||| 5 0 4 ||| 5 0 4 ||| LogProb=-6.90775527898\n[S] ||| 5 4 ||| 5 4 ||| LogProb=-5.52146091786\n[S] ||| 1 2 0 ||| 1 2 0 ||| LogProb=-6.90775527898\n[S] ||| 2 5 0 ||| 2 5 0 ||| LogProb=-5.29831736655\n[S] ||| 1 9 5 2 ||| 1 9 5 2 ||| LogProb=-6.21460809842\n[S] ||| 2 9 ||| 2 9 ||| LogProb=-5.80914299031\n[S] ||| 8 0 ||| 8 0 ||| LogProb=-5.80914299031\n[S] ||| 1 9 2 9 ||| 1 9 2 9 ||| LogProb=-6.90775527898\n[S] ||| 8 8 0 ||| 8 8 0 ||| LogProb=-6.90775527898\n[S] ||| 1 9 ||| 1 9 ||| LogProb=-5.29831736655\n[S] ||| 1 8 5 0 ||| 1 8 5 0 ||| LogProb=-6.90775527898\n[S] ||| 4 4 ||| 4 4 ||| LogProb=-4.8283137373\n[S] ||| 1 9 7 3 ||| 1 9 7 3 ||| LogProb=-6.21460809842\n[S] ||| 1 9 7 4 ||| 1 9 7 4 ||| LogProb=-5.52146091786\n[S] ||| 1 9 0 [D,1] ||| 1 9 0 [D,1] ||| LogProb=-5.80914299031\n[S] ||| 3 [D,1] ||| 3 [D,1] ||| LogProb=-6.21460809842\n[S] ||| 6 7 ||| 6 7 ||| LogProb=-6.90775527898\n[S] ||| 5 ||| 5 ||| LogProb=-3.07911388249\n[S] ||| 8 3 ||| 8 3 ||| LogProb=-6.90775527898\n[S] ||| 1 9 2 5 ||| 1 9 2 5 ||| LogProb=-6.90775527898\n[D] ||| 6 ||| 6 ||| LogProb=0.0\n[S] ||| 1 5 [D,1] ||| 1 5 [D,1] ||| LogProb=-6.90775527898\n[S] ||| 2 0 0 8 ||| 2 0 0 8 ||| LogProb=-6.90775527898\n[S] ||| 3 9 0 ||| 3 9 0 ||| LogProb=-6.90775527898\n[S] ||| 3 2 0 0 ||| 3 2 0 0 ||| LogProb=-6.90775527898\n[S] ||| 6 9 ||| 6 9 ||| LogProb=-5.52146091786\n[S] ||| 1 [D,1] 0 ||| 1 [D,1] 0 ||| LogProb=-6.90775527898\n[S] ||| 2 1 ||| 2 1 ||| LogProb=-4.60517018599\n[S] ||| 1 9 8 4 ||| 1 9 8 4 ||| LogProb=-5.11599580975\n[S] ||| 1 9 8 3 ||| 1 9 8 3 ||| LogProb=-6.90775527898\n[S] ||| 1 3 0 ||| 1 3 0 ||| LogProb=-5.80914299031\n[S] ||| 1 9 0 0 ||| 1 9 0 0 ||| LogProb=-6.90775527898\n[S] ||| 2 5 ||| 2 5 ||| LogProb=-4.34280592152\n[S] ||| 2 1 7 ||| 2 1 7 ||| LogProb=-6.90775527898\n[S] ||| 1 5 4 ||| 1 5 4 ||| LogProb=-6.90775527898\n[S] ||| 1 0 [D,1] ||| 1 0 [D,1] ||| LogProb=-6.90775527898\n[S] ||| 1 9 9 7 ||| 1 9 9 7 ||| LogProb=-6.90775527898\n[S] ||| 1 9 9 3 ||| 1 9 9 3 ||| LogProb=-5.80914299031\n[S] ||| 1 9 8 7 ||| 1 9 8 7 ||| LogProb=-4.13516655674\n[S] ||| 2 8 0 ||| 2 8 0 ||| LogProb=-6.90775527898\n[S] ||| 1 9 [S2,1] ||| 1 9 [S2,1] ||| LogProb=-3.72970144863\n[S] ||| 8 0 0 ||| 8 0 0 ||| LogProb=-6.90775527898\n[S] ||| 1 9 9 0 ||| 1 9 9 0 ||| LogProb=-4.34280592152\n[S] ||| 4 3 ||| 4 3 ||| LogProb=-6.21460809842\n[S] ||| 4 ||| 4 ||| LogProb=-3.77226106305\n[S] ||| 2 0 0 [D,1] ||| 2 0 0 [D,1] ||| LogProb=-6.90775527898\n[S] ||| 7 0 8 ||| 7 0 8 ||| LogProb=-6.90775527898\n[S] ||| 1 9 9 9 ||| 1 9 9 9 ||| LogProb=-6.21460809842\n[S] ||| 2 2 ||| 2 2 ||| LogProb=-5.52146091786\n[S] ||| 7 7 ||| 7 7 ||| LogProb=-6.90775527898\n[S] ||| 9 0 ||| 9 0 ||| LogProb=-5.80914299031\n[S] ||| 3 5 ||| 3 5 ||| LogProb=-6.21460809842\n[S] ||| 9 2 ||| 9 2 ||| LogProb=-6.21460809842\n[S] ||| 7 3 5 ||| 7 3 5 ||| LogProb=-6.90775527898\n[S] ||| 1 9 8 0 ||| 1 9 8 0 ||| LogProb=-5.52146091786\n[S] ||| 1 9 9 4 ||| 1 9 9 4 ||| LogProb=-6.90775527898\n[S] ||| 9 8 ||| 9 8 ||| LogProb=-6.90775527898\n[S] ||| 1 9 9 [D,1] ||| 1 9 9 [D,1] ||| LogProb=-6.90775527898\n[S] ||| 1 9 4 7 ||| 1 9 4 7 ||| LogProb=-6.90775527898\n[S] ||| 3 1 ||| 3 1 ||| LogProb=-4.42284862919\n[S] ||| 5 [D,1] ||| 5 [D,1] ||| LogProb=-6.90775527898\n[S] ||| 7 ||| 7 ||| LogProb=-4.01738352109\n[S] ||| 6 4 0 ||| 6 4 0 ||| LogProb=-6.90775527898\n[S] ||| 1 9 [D,1] 4 ||| 1 9 [D,1] 4 ||| LogProb=-6.90775527898\n[S] ||| 3 2 ||| 3 2 ||| LogProb=-5.80914299031\n[S] ||| 1 9 7 2 ||| 1 9 7 2 ||| LogProb=-6.90775527898\n[S] ||| 6 [D,1] ||| 6 [D,1] ||| LogProb=-6.90775527898\n[S] ||| 1 9 [D,1] 7 ||| 1 9 [D,1] 7 ||| LogProb=-6.90775527898\n[S] ||| 1 4 ||| 1 4 ||| LogProb=-4.8283137373\n[S] ||| 2 2 5 ||| 2 2 5 ||| LogProb=-6.90775527898\n[S] ||| 1 0 0 0 ||| 1 0 0 0 ||| LogProb=-4.96184512993\n[S] ||| 3 9 2 ||| 3 9 2 ||| LogProb=-6.90775527898\n[S] ||| 1 0 ||| 1 0 ||| LogProb=-3.44201937618\n[S] ||| 5 9 ||| 5 9 ||| LogProb=-6.90775527898\n[S] ||| 6 1 ||| 6 1 ||| LogProb=-5.80914299031\n[S] ||| 2 0 4 [D,1] ||| 2 0 4 [D,1] ||| LogProb=-6.90775527898\n[S] ||| 1 0 2 ||| 1 0 2 ||| LogProb=-6.90775527898\n[S] ||| 3 3 8 ||| 3 3 8 ||| LogProb=-6.90775527898\n[S] ||| 8 5 0 ||| 8 5 0 ||| LogProb=-6.90775527898\n[S] ||| 7 8 ||| 7 8 ||| LogProb=-6.90775527898\n[S] ||| 1 9 8 [D,1] ||| 1 9 8 [D,1] ||| LogProb=-4.8283137373\n[S] ||| 1 9 7 9 ||| 1 9 7 9 ||| LogProb=-6.21460809842\n[S] ||| 2 [D,1] [D,2] 0 ||| 2 [D,1] [D,2] 0 ||| LogProb=-6.90775527898\n[S] ||| 9 3 ||| 9 3 ||| LogProb=-6.90775527898\n[S] ||| 9 5 ||| 9 5 ||| LogProb=-5.80914299031\n[S] ||| 1 5 0 ||| 1 5 0 ||| LogProb=-6.90775527898\n[S] ||| 1 9 7 8 ||| 1 9 7 8 ||| LogProb=-6.90775527898\n[S] ||| 7 2 ||| 7 2 ||| LogProb=-6.21460809842\n'
+p1035
+a.
