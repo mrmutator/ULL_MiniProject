@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 
 # read data
 
-infile = open("results/test2_results.txt", "r")
+infile = open("results/comp_noinside_results.txt", "r")
 data = []
 for line in infile:
     data.append(tuple(line.strip().split()))
