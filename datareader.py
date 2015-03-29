@@ -221,7 +221,6 @@ if __name__ == '__main__':
 
     # Read numeral data
     reader.read_data('wsj01-21-without-tags-traces-punctuation-m40.txt', 'CD')
-#     reader.read_data('numbers', None)
 
 
     # Limit to range [0,200)
